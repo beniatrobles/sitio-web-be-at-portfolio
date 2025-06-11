@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio - Mi Sitio 4-Bit</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="estilos.css" />
+</head>
+
+<body>
+    <div class="inicio">
+        <div class="cuadro">
+            <h1 class="mundo">¡Enhorabuena!</h1>
+            <h1 class="mundo">¡Has entrado en mi mundo!</h1>
+            <a href="#" id="sobreMi">Sobre mí</a>
+            <a href="">Proyectos</a>
+            <a href="">Contacto</a>
+        </div>
+        <br><br><br><br><br><br><br>
+        <div class="minijuego">
+            <p class="valientes">"SOLO PARA VALIENTES"</p>
+            <a href="">Minijuego</a>
+        </div>
+        <br><br>
+    </div>
+    <div class="realizado">
+        <h1>Realizado por BEÑAT ROBLES</h1>
+    </div>
+    <div class="mute">
+        <p>Mutear la cancion</p>
+        <button id="quitarMusica"><img src="altavoz.png" alt="" class="altavoz"></button>
+    </div>
+
+
+
+    <audio id="musica" loop>
+        <source src="inicio.mp3" type="audio/mp3" />
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <audio id="hoverSound" src="001_Hover_01.wav"></audio>
+
+    <audio id="paginaLibro" src="turn-a-page.mp3"></audio>
+
+    <audio id="risaTerror" src="risaTerror.mp3"></audio>
+    <audio id="ambienteTerror" src="ambienteTerror.mp3"></audio>
+    <audio id="cerrar" src="cerrar.mp3"></audio>
+
+    <!----------------------- CONTENEDOR SOBRE MI -------------------->
+    <div id="contenedorSobreMi" class="sobremi">
+        <div class="contenido">
+            <h1 class="textoSobreMi">Sobre mí</h1>
+            <a href="" id="cerrarSobreMi">X</a>
+            <br><br>
+            <div class="contenido1">
+                <div class="cuadroAdvertencia">
+                    <img src="fotoNoPixelArt.jpeg" alt="Imagen sobre mí" width="300" class="imgSobreMi"
+                        id="hoverTerror">
+                    <img src="fotoPixelArtTerror.png" alt="Imagen terrorífica" width="300" class="oculto"
+                        id="imgTerror">
+                    <p class="textoAdvertencia">Evita pasar el ratón por la imagen. Avisad@ estás.</p>
+                    <p class="textoAdvertencia">¡BAJO TU RESPONSABILIDAD!</p>
+                </div>
+                <div class="textoycont">
+                    <p class="presentacion">Kaixo!, soy <span class="resaltar">Beñat Robles</span>. Comencé mi
+                        trayectoria en el ámbito tecnológico con un <span class="resaltar">Grado Superior en
+                            Sistemas de Telecomunicaciones</span>, donde adquirí experiencia trabajando en el sector.
+
+                        En 2023 decidí dar un giro a mi carrera y centrarme en el <span class="resaltar">desarrollo
+                            web</span>, un área que siempre me
+                        ha interesado por su equilibrio entre lógica, diseño y creatividad. Desde entonces, he estado
+                        formándome y desarrollando proyectos que me han permitido crecer como programador.</p>
+                    <div class="contactos">
+                        <p class="cv1">
+                            <a href="CVbeñat.docx" download="Beñat_Robles_CV.docx" class="cv" id="cv">Descargar CV</a>
+                        </p>
+                        <div class="iconosContactos">
+                            <p class="instagram" id="instagram">
+                                <a href="https://www.instagram.com/beniatrobles/" target="_blank">
+                                    <img src="instagram.png" alt="Instagram" width="50" >
+                                </a>
+                            </p>
+
+                            <p class="instagram" id="github">
+                                <a href="https://github.com/beniatrobles" target="_blank">
+                                    <img src="github.png" alt="Github" width="50">
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+
+    <script>
+        const screen = document.querySelector( '.inicio' )
+        const links = document.querySelectorAll( '.cuadro a, .minijuego a' )
+        const hoverSound = document.getElementById( 'hoverSound' )
+        const botonMute = document.getElementById( 'quitarMusica' )
+        const musica = document.getElementById( 'musica' )
+        const icono = botonMute.querySelector( 'img' )
+        const paginaLibro = document.getElementById( "paginaLibro" )
+        const contenedor = document.getElementById( 'contenedorSobreMi' );
+        const cerrarBtn = document.getElementById( 'cerrarSobreMi' );
+        const imgTerror = document.querySelector( '.imgSobreMi' )
+        const imgTerror1 = document.getElementById( 'imgTerror' );
+        const risaTerror = document.getElementById( 'risaTerror' )
+        const ambienteTerror = document.getElementById( 'ambienteTerror' )
+        const cerrar = document.getElementById( 'cerrar' )
+        const cv = document.getElementById( 'cv' )
+        const instagram = document.getElementById( 'instagram' )
+        const github = document.getElementById( 'github' )
+        let musicaMuteadaPorUsuario = false;
+
+        window.addEventListener( 'load', () =>
+        {
+            const musica = document.getElementById( 'musica' );
+
+            const fondo = document.createElement( 'div' );
+            fondo.style.position = 'fixed';
+            fondo.style.top = '0';
+            fondo.style.left = '0';
+            fondo.style.width = '100vw';
+            fondo.style.height = '100vh';
+            fondo.style.backgroundImage = "url('hogueragif.gif')";
+            fondo.style.backgroundSize = 'cover';
+            fondo.style.backgroundRepeat = 'no-repeat';
+            fondo.style.backgroundPosition = 'center';
+            fondo.style.imageRendering = 'pixelated';
+            fondo.style.opacity = '0';
+            fondo.style.zIndex = '-1';
+            fondo.style.transition = 'opacity 2s ease-in-out';
+            document.body.appendChild( fondo );
+
+            // Iniciar fade-in del fondo
+            requestAnimationFrame( () =>
+            {
+                fondo.style.opacity = '1';
+            } );
+
+            // Empieza la música justo al iniciar el fade-in del fondo
+            musica.currentTime = 0;
+            musica.play().catch( err =>
+            {
+                console.warn( 'El navegador bloqueó la reproducción automática:', err );
+            } );
+
+            // Después de 2 segundos (cuando termina el fade-in), inicia la animación del contenido
+            setTimeout( () =>
+            {
+                screen.style.animation = 'entrarDesdeArriba 4s ease-out forwards';
+                setTimeout( () =>
+                {
+                    const realizado = document.querySelector( '.realizado' );
+                    realizado.classList.add( 'visible' );
+                }, 4200 );
+
+            }, 2000 );
+        } );
+
+        links.forEach( link =>
+        {
+            link.addEventListener( 'mouseenter', () =>
+            {
+                hoverSound.currentTime = 0;
+                hoverSound.play();
+            } );
+        } );
+
+        botonMute.addEventListener( 'click', () =>
+        {
+            if ( musica.paused )
+            {
+                musica.play()
+                icono.src = 'altavoz.png'
+                musicaMuteadaPorUsuario = false;
+            } else
+            {
+                musica.pause();
+                icono.src = 'altavozMute.png'
+                musicaMuteadaPorUsuario = true;
+            }
+        } );
+
+
+        document.getElementById( 'sobreMi' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            document.getElementById( 'contenedorSobreMi' ).style.display = 'flex';
+            paginaLibro.play()
+        } );
+
+        document.getElementById( 'cerrarSobreMi' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            document.getElementById( 'contenedorSobreMi' ).style.display = 'none';
+            cerrar.play()
+        } );
+
+
+        imgTerror.addEventListener( 'mouseenter', () =>
+        {
+            risaTerror.currentTime = 0;
+            ambienteTerror.currentTime = 0;
+            risaTerror.play()
+            ambienteTerror.play()
+            musica.pause()
+            imgTerror.classList.add( 'oculto' )
+            imgTerror1.classList.remove( 'oculto' )
+
+        } )
+
+        imgTerror1.addEventListener( 'mouseleave', () =>
+        {
+            risaTerror.pause();
+            ambienteTerror.pause();
+            if ( !musicaMuteadaPorUsuario )
+            {
+                musica.play();
+            }
+            imgTerror.style.animation = 'none';
+            imgTerror.style.opacity = '1';
+            imgTerror.classList.remove( 'oculto' );
+            imgTerror1.classList.add( 'oculto' );
+
+
+
+        } );
+
+        cv.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play()
+        } )
+
+        cv.addEventListener( 'click', () =>
+        {
+            cerrar.play()
+        } )
+
+        instagram.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play()
+        } )
+
+        instagram.addEventListener( 'click', () =>
+        {
+            cerrar.play()
+        } )
+        github.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play()
+        } )
+
+        github.addEventListener( 'click', () =>
+        {
+            cerrar.play()
+        } )
+    </script>
+
+
+</body>
+
+</html>

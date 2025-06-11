@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reino 4-Bit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+  <div class="index">
+    <div class="screen">
+      <h1>🌙 Bienvenid@ 🌙</h1>
+      <p>...Relajate...<br /><br>...Prepárate para la aventura...</p><br>
+      <p>¡¡Activa el sonido y pulsa <span class="f11">F11</span> para la pantalla completa!!</p>
+      <button id="iniciarBtn">Entrar</button>
+      <br><br>
+    </div>
+
+    <br><br>
+    <p class="responsive">Version movil y tablet en desarrollo...</p>
+
+  </div>
+
+
+
+  <script>
+    const iniciarBtn = document.getElementById( 'iniciarBtn' );
+    iniciarBtn.addEventListener( 'click', () =>
+    {
+      window.location.href = 'inicio.html';
+    } );
+  </script>
+</body>
+
+</html>
