@@ -16,7 +16,7 @@
             <h1 class="mundo">¡Has entrado en mi mundo!</h1>
             <a href="#" id="sobreMi">Sobre mí</a>
             <a href="">Proyectos</a>
-            <a href="">Contacto</a>
+            <a href="#" id="contactame">Contactame</a>
         </div>
         <br><br><br><br><br><br><br>
         <div class="minijuego">
@@ -68,8 +68,9 @@
                         trayectoria en el ámbito tecnológico con un <span class="resaltar">Grado Superior en
                             Sistemas de Telecomunicaciones</span>, donde adquirí experiencia trabajando en el sector.
 
-                        En 2023 decidí dar un giro a mi carrera y centrarme en el <span class="resaltar">desarrollo
-                            web</span>, un área que siempre me
+                        En 2023 decidí dar un giro a mi carrera y empece a estudiar un <span class="resaltar">Grado
+                            Superior en Desarrollo de Aplicaciones
+                            Web</span>, un área que siempre me
                         ha interesado por su equilibrio entre lógica, diseño y creatividad. Desde entonces, he estado
                         formándome y desarrollando proyectos que me han permitido crecer como programador.</p>
                     <div class="contactos">
@@ -79,7 +80,7 @@
                         <div class="iconosContactos">
                             <p class="instagram" id="instagram">
                                 <a href="https://www.instagram.com/beniatrobles/" target="_blank">
-                                    <img src="instagram.png" alt="Instagram" width="50" >
+                                    <img src="instagram.png" alt="Instagram" width="50">
                                 </a>
                             </p>
 
@@ -96,6 +97,34 @@
     </div>
     <!-- --------------------------------------------------------------- -->
 
+
+    <!----------------------- CONTENEDOR CONTACTAME -------------------->
+    <div id="contenedorContactame" class="contactame">
+        <div class="contenido">
+            <h1 class="textoSobreMi">Contactame</h1>
+            <a href="" id="cerrarContactame">X</a>
+            <br><br>
+            <div class="contenido2">
+
+                <form name="contacto" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="contacto" />
+
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre" required><br><br>
+
+                    <label for="email">Tu Email:</label><br>
+                    <input type="email" id="email" name="email" required><br><br>
+
+                    <label for="mensaje">Mensaje:</label><br>
+                    <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+
+                    <button type="submit" id="enviarMensaje">Enviar mensaje</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+
     <script>
         const screen = document.querySelector( '.inicio' )
         const links = document.querySelectorAll( '.cuadro a, .minijuego a' )
@@ -105,6 +134,7 @@
         const icono = botonMute.querySelector( 'img' )
         const paginaLibro = document.getElementById( "paginaLibro" )
         const contenedor = document.getElementById( 'contenedorSobreMi' );
+        const contenedorContactame = document.getElementById( 'contenedorContactame' );
         const cerrarBtn = document.getElementById( 'cerrarSobreMi' );
         const imgTerror = document.querySelector( '.imgSobreMi' )
         const imgTerror1 = document.getElementById( 'imgTerror' );
@@ -114,6 +144,7 @@
         const cv = document.getElementById( 'cv' )
         const instagram = document.getElementById( 'instagram' )
         const github = document.getElementById( 'github' )
+        const enviarMensaje = document.getElementById('enviarMensaje')
         let musicaMuteadaPorUsuario = false;
 
         window.addEventListener( 'load', () =>
@@ -190,14 +221,28 @@
         document.getElementById( 'sobreMi' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
-            document.getElementById( 'contenedorSobreMi' ).style.display = 'flex';
+            document.getElementById( 'contenedorSobreMi' ).style.display = 'flex'
             paginaLibro.play()
         } );
 
         document.getElementById( 'cerrarSobreMi' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
-            document.getElementById( 'contenedorSobreMi' ).style.display = 'none';
+            document.getElementById( 'contenedorSobreMi' ).style.display = 'none'
+            cerrar.play()
+        } );
+
+        document.getElementById( 'contactame' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            document.getElementById( 'contenedorContactame' ).style.display = 'flex'
+            paginaLibro.play()
+        } )
+
+        document.getElementById( 'cerrarContactame' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            document.getElementById( 'contenedorContactame' ).style.display = 'none'
             cerrar.play()
         } );
 
@@ -262,6 +307,15 @@
         {
             cerrar.play()
         } )
+
+        enviarMensaje.addEventListener('mouseenter',()=>{
+            hoverSound.currentTime = 0
+            hoverSound.play()
+        })
+
+        enviarMensaje.addEventListener('click',()=>{
+            cerrar.play()
+        })
     </script>
 
 

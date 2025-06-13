@@ -288,7 +288,29 @@ p {
     animation-delay: 0.5s;
 }
 
+.contactame {
+    position: fixed;
+    display: none;
+    background-color: #1a0e0e;
+    padding: 40px;
+    border: 2px solid rgb(199, 166, 21);
+    border-radius: 8px;
+    width: 50%;
+    height: 55%;
+    z-index: 20;
+    opacity: 0;
+    transform: scale(0.2);
+    animation: aparecerContenedor 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
 .sobremi .contenido {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.contactame .contenido {
     position: relative;
     width: 100%;
     height: 100%;
@@ -305,6 +327,20 @@ p {
 }
 
 .sobremi #cerrarSobreMi:hover {
+    color: #fff;
+}
+
+.contactame #cerrarContactame {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #eac784;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.contactame #cerrarContactame:hover {
     color: #fff;
 }
 
@@ -338,7 +374,8 @@ p {
     display: none;
 
 }
-.contenido1{
+
+.contenido1 {
     display: flex;
     gap: 50px;
 }
@@ -354,23 +391,24 @@ p {
     font-size: 15px;
 }
 
-.presentacion{
+.presentacion {
     font-size: 25px;
     color: #8c6d4a;
 }
-.resaltar{
+
+.resaltar {
     font-size: 30px;
     color: #754121;
 }
 
-.contactos{
+.contactos {
     display: flex;
     align-items: center;
     height: 120px;
     justify-content: space-between;
 }
 
-.cv{
+.cv {
     text-decoration: none;
     background-color: #754121;
     padding: 20px;
@@ -379,9 +417,9 @@ p {
     color: var(--texto);
 }
 
-.cv:hover{
+.cv:hover {
     text-decoration: none;
-    background-color: var(--texto) ;
+    background-color: var(--texto);
     padding: 20px;
     color: #754121;
 }
@@ -400,6 +438,54 @@ p {
     transition: transform 0.2s ease;
 }
 
-.iconosContactos{
+.iconosContactos {
     display: flex;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Press Start 2P', cursive;
+    background-color: #1a0e0e;
+    color: var(--texto);
+    border-radius: 20px;
+    max-width: 400px;
+}
+
+input,
+textarea {
+    width: 150%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    margin-top: 5px;
+    font-family: monospace;
+}
+
+
+button {
+    background-color: #754121;
+    color: var(--texto);
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-family: 'Press Start 2P', sans-serif;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.1);
+    background-color: var(--texto);
+    color: #754121;
+}
+
+.contenido2 {
+    display: flex;
+    justify-content: center;
 }
