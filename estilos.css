@@ -489,3 +489,37 @@ button:hover {
     display: flex;
     justify-content: center;
 }
+
+@keyframes ola {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.5);
+  }
+}
+
+.cargando {
+  font-size: 60px;
+  font-family: 'Press Start 2P', cursive;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.cargando span {
+  display: inline-block;
+  animation: ola 1.5s ease-in-out infinite;
+}
+
+.cargando span:nth-child(1) { animation-delay: 0s; }
+.cargando span:nth-child(2) { animation-delay: 0.1s; }
+.cargando span:nth-child(3) { animation-delay: 0.2s; }
+.cargando span:nth-child(4) { animation-delay: 0.3s; }
+.cargando span:nth-child(5) { animation-delay: 0.4s; }
+.cargando span:nth-child(6) { animation-delay: 0.5s; }
+.cargando span:nth-child(7) { animation-delay: 0.6s; }
+.cargando span:nth-child(8) { animation-delay: 0.7s; }
+.cargando span:nth-child(9) { animation-delay: 0.8s; }
+.cargando span:nth-child(10) { animation-delay: 0.9s; }
+.cargando span:nth-child(11) { animation-delay: 1s; }

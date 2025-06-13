@@ -1,0 +1,76 @@
+:root {
+    --fondo: #1a0e0e;
+    --texto: #eac784;
+    --boton-bg: #5e412f;
+    --boton-hover: #8c6d4a;
+    --bordes: #c9a66b;
+    --val: #ff0000;
+    --f11: #e2a22a;
+}
+
+
+#pantalla {
+    position: absolute;
+    top: 55%;
+    left: 43%;
+    width: 57%;
+    height: 75%;
+    transform: translate(-50%, -50%) translate(12.5%, -5%);
+    background-color: black;
+    border-radius: 10px;
+    z-index: 0;
+
+    box-shadow: inset 0 0 20px #00ffcc33, 0 0 20px #00ffcc33;
+}
+
+
+#backgroundJuego {
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('pantalla.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100px;
+    z-index: 1;
+}
+
+
+#volverBtn {
+    cursor: pointer;
+    position: absolute;
+    bottom: 3%;
+    left: 47%;
+    font-size: 25px;
+    font: bolder;
+    color: #c9a66b;
+    text-decoration: none;
+    border: 2px solid #c9a66b;
+    padding: 10px 20px;
+    border-radius: 6px;
+    display: inline-block;
+    transition: background-color 0.3s, transform 0.2s;
+    background-color: transparent;
+    z-index: 2;
+}
+
+#volverBtn:hover {
+    transform: scale(1.1);
+    color: rgb(172, 173, 180);
+    border-color: rgb(180, 172, 172);
+}
+
+.contenedorJuego {
+    margin: 8%;
+    margin-left: 55px;
+    text-align: center;
+}
+
+.contenedorJuego h1{
+    font-family: 'Press Start 2P', monospace;
+    color: var(--texto);
+}

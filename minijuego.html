@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minijuego</title>
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="minijuego.css">
+</head>
+
+<body>
+    <div id="background">
+        <div id="pantalla">
+            <div class="contenedorJuego">
+                <h1 style="color: white;">AHORCADO</h1>
+            </div>
+        </div>
+        <div id="backgroundJuego">
+
+        </div>
+
+        <div>
+            <button id="volverBtn">Volver</button>
+        </div>
+    </div>
+
+    <audio id="musica" loop>
+        <source src="cancionminijuego.mp3" type="audio/mp3" />
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <audio id="hoverSound" src="001_Hover_01.wav"></audio>
+</body>
+
+<script>
+    const screen = document.querySelector( '#background' )
+    const volverBtn = document.getElementById( 'volverBtn' );
+    const musica = document.getElementById( 'musica' )
+    const hoverSound = document.getElementById( 'hoverSound' )
+
+    window.addEventListener( 'load', () =>
+    {
+        const fondo = document.createElement( 'div' );
+        const musica = document.getElementById( 'musica' )
+        fondo.style.position = 'fixed';
+        fondo.style.top = '0';
+        fondo.style.left = '0';
+        fondo.style.width = '100vw';
+        fondo.style.height = '100vh';
+        fondo.style.backgroundImage = "url('fondoMini.gif')";
+        fondo.style.backgroundSize = 'cover';
+        fondo.style.backgroundRepeat = 'no-repeat';
+        fondo.style.backgroundPosition = 'center';
+        fondo.style.imageRendering = 'pixelated';
+        fondo.style.opacity = '1';
+        fondo.style.zIndex = '-1';
+        fondo.style.transition = 'opacity 2s ease-in-out';
+        document.body.appendChild( fondo );
+
+        musica.play()
+
+    } )
+
+    window.addEventListener( 'load', ajustarPantalla );
+    window.addEventListener( 'resize', ajustarPantalla );
+
+    function ajustarPantalla()
+    {
+        const backgroundJuego = document.getElementById( 'backgroundJuego' );
+        const pantalla = document.getElementById( 'pantalla' );
+
+        const bgWidth = backgroundJuego.clientWidth;
+        const bgHeight = backgroundJuego.clientHeight;
+
+        pantalla.style.width = ( bgWidth * widthRatio ) + 'px';
+        pantalla.style.height = ( bgHeight * heightRatio ) + 'px';
+        pantalla.style.top = ( bgHeight * topRatio ) + 'px';
+        pantalla.style.left = ( bgWidth * leftRatio ) + 'px';
+    }
+
+    volverBtn.addEventListener( 'mouseenter', () =>
+    {
+        hoverSound.currentTime = 0
+        hoverSound.play()
+    } )
+    volverBtn.addEventListener( 'click', () =>
+    {
+        window.location.href = 'cargando.html';
+    } );
+</script>
+
+</html>

@@ -21,7 +21,7 @@
         <br><br><br><br><br><br><br>
         <div class="minijuego">
             <p class="valientes">"SOLO PARA VALIENTES"</p>
-            <a href="">Minijuego</a>
+            <a href="cargando.html" id="minijuego">Minijuego</a>
         </div>
         <br><br>
     </div>
@@ -144,7 +144,8 @@
         const cv = document.getElementById( 'cv' )
         const instagram = document.getElementById( 'instagram' )
         const github = document.getElementById( 'github' )
-        const enviarMensaje = document.getElementById('enviarMensaje')
+        const enviarMensaje = document.getElementById( 'enviarMensaje' )
+        const minijuego = document.getElementById( 'minijuego' )
         let musicaMuteadaPorUsuario = false;
 
         window.addEventListener( 'load', () =>
@@ -308,14 +309,26 @@
             cerrar.play()
         } )
 
-        enviarMensaje.addEventListener('mouseenter',()=>{
+        enviarMensaje.addEventListener( 'mouseenter', () =>
+        {
             hoverSound.currentTime = 0
             hoverSound.play()
-        })
+        } )
 
-        enviarMensaje.addEventListener('click',()=>{
+        enviarMensaje.addEventListener( 'click', () =>
+        {
             cerrar.play()
-        })
+        } )
+
+        minijuego.addEventListener( 'click', () =>
+        {
+            paginaLibro.play()
+        } )
+
+
+
+      
+    </script>
     </script>
 
 
