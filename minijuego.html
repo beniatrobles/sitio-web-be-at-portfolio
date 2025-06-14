@@ -44,6 +44,7 @@
     </audio>
 
     <audio id="hoverSound" src="001_Hover_01.wav"></audio>
+    <audio id="tecla" src="tecla.mp3"></audio>
 
     <script>
         document.addEventListener( "DOMContentLoaded", () =>
@@ -56,6 +57,7 @@
             let start = document.getElementById( 'start' );
             const botonMute = document.getElementById( 'quitarMusica' )
             const icono = botonMute.querySelector( 'img' )
+            const tecla = document.getElementById('tecla')
 
             const magoGif = document.getElementById( 'magoGif' )
             const contenedorPalabra = document.getElementById( 'contenedorPalabra' );
@@ -147,6 +149,8 @@
 
             let eventoLetra = event =>
             {
+                tecla.currentTime = 0
+                tecla.play()
                 let nuevaLetra = event.key.toUpperCase()
                 if ( nuevaLetra.match( /^[a-zñ]$/i ) && !letraUsada.includes( nuevaLetra ) )
                 {
