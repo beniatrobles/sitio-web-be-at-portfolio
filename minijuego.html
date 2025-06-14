@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minijuego</title>
-     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="minijuego.css">
 </head>
 
@@ -14,15 +14,28 @@
         <div id="pantalla">
             <div class="contenedorJuego">
                 <h1 style="color: white;">AHORCADO</h1>
+                <br><br>
+                <img src="trueno.gif" alt="Mago animado" id="magoGif">
+                <div>
+                    <canvas id="canvas"></canvas>
+                    <div id="letrasUsadas"></div>
+                </div>
+                <br><br><br>
+                <div id="contenedorPalabra"></div>
+                <br>
+                <button id="start">START</button>
             </div>
         </div>
-        <div id="backgroundJuego">
+    </div>
 
-        </div>
+    <div class="mute">
+        <p>Mutear la cancion</p>
+        <button id="quitarMusica"><img src="altavoz.png" alt="" class="altavoz"></button>
+    </div>
 
-        <div>
-            <button id="volverBtn">Volver</button>
-        </div>
+    <div>
+        <button id="volverBtn">Volver</button>
+    </div>
     </div>
 
     <audio id="musica" loop>
@@ -31,63 +44,275 @@
     </audio>
 
     <audio id="hoverSound" src="001_Hover_01.wav"></audio>
+
+    <script>
+        document.addEventListener( "DOMContentLoaded", () =>
+        {
+
+            const screen = document.querySelector( '#background' );
+            const volverBtn = document.getElementById( 'volverBtn' );
+            const musica = document.getElementById( 'musica' );
+            const hoverSound = document.getElementById( 'hoverSound' );
+            let start = document.getElementById( 'start' );
+            const botonMute = document.getElementById( 'quitarMusica' )
+            const icono = botonMute.querySelector( 'img' )
+
+            const magoGif = document.getElementById( 'magoGif' )
+            const contenedorPalabra = document.getElementById( 'contenedorPalabra' );
+            const letrasUsadas = document.getElementById( 'letrasUsadas' );
+            const canvas = document.getElementById( 'canvas' );
+            const ctx = canvas.getContext( '2d' );
+
+            ctx.canvas.width = 0;
+            ctx.canvas.height = 0;
+
+
+
+            const cuerpoAhorcado = [
+                [ 4, 2, 1, 1 ],
+                [ 4, 3, 1, 2 ],
+                [ 3, 5, 1, 1 ],
+                [ 5, 5, 1, 1 ],
+                [ 3, 3, 1, 1 ],
+                [ 5, 3, 1, 1 ]
+            ];
+
+            let palabraSeleccionada;
+            let letraUsada;
+            let fallos;
+            let aciertos;
+
+            let endGame = () =>
+            {
+                document.removeEventListener( 'keydown', eventoLetra );
+                start.style.display = 'block';
+
+                
+                const { children } = contenedorPalabra;
+                for ( let i = 0; i < children.length; i++ )
+                {
+                    children[ i ].classList.remove( 'hidden' );
+                }
+            }
+
+            let anadirLetra = letra =>
+            {
+                const letraElemento = document.createElement( 'span' )
+                letraElemento.innerHTML = letra.toUpperCase()
+                letrasUsadas.appendChild( letraElemento )
+            }
+
+            let addCuerpoAhorcado = cuerpoAhorcado =>
+            {
+                ctx.fillStyle = '#eac784'
+                ctx.fillRect( ...cuerpoAhorcado )
+            }
+
+            let letraIncorrecta = () =>
+            {
+                addCuerpoAhorcado( cuerpoAhorcado[ fallos ] )
+                fallos++
+
+                if ( fallos === cuerpoAhorcado.length ) endGame()
+            }
+
+            let letraCorrecta = letra =>
+            {
+                const { children } = contenedorPalabra
+                for ( let i = 0; i < children.length; i++ )
+                {
+                    if ( children[ i ].innerHTML === letra )
+                    {
+                        children[ i ].classList.toggle( 'hidden' )
+                        aciertos++
+                    }
+                }
+
+                if ( aciertos === palabraSeleccionada.length ) endGame();
+            }
+
+            let letraInput = letra =>
+            {
+                if ( palabraSeleccionada.includes( letra ) )
+                {
+                    letraCorrecta( letra )
+                } else
+                {
+                    letraIncorrecta()
+                }
+
+                anadirLetra( letra )
+                letraUsada.push( letra )
+            }
+
+            let eventoLetra = event =>
+            {
+                let nuevaLetra = event.key.toUpperCase()
+                if ( nuevaLetra.match( /^[a-zñ]$/i ) && !letraUsada.includes( nuevaLetra ) )
+                {
+                    letraInput( nuevaLetra )
+                }
+            }
+
+            let dibujarPalabra = () =>
+            {
+                palabraSeleccionada.forEach( letra =>
+                {
+                    const letraElemento = document.createElement( 'span' )
+                    letraElemento.innerHTML = letra.toUpperCase()
+                    letraElemento.classList.add( 'letra' )
+                    letraElemento.classList.add( 'hidden' )
+                    contenedorPalabra.appendChild( letraElemento )
+
+                } )
+            }
+
+            let palabraRandom = () =>
+            {
+                let palabra = palabras[ Math.floor( ( Math.random() * palabras.length ) ) ].toUpperCase()
+                palabraSeleccionada = palabra.split( '' )
+            }
+
+
+            let dibujarAhorcado = () =>
+            {
+                ctx.canvas.width = 120;
+                ctx.canvas.height = 160;
+                ctx.setTransform( 1, 0, 0, 1, 0, 0 );
+                ctx.clearRect( 0, 0, canvas.width, canvas.height );
+                ctx.scale( 20, 20 );
+                ctx.fillStyle = '#d95d39';
+
+                // Dibujo del poste del ahorcado
+                ctx.fillRect( 0, 7, 4, 1 ); // base
+                ctx.fillRect( 1, 0, 1, 8 ); // poste vertical
+                ctx.fillRect( 2, 0, 4, 1 ); // brazo horizontal
+                ctx.fillRect( 4, 1, 1, 1 ); // cuerda
+            };
+
+
+
+            start.addEventListener( 'click', () =>
+            {
+                letraUsada = [];
+                fallos = 0;
+                aciertos = 0;
+                contenedorPalabra.innerHTML = '';
+                letrasUsadas.innerHTML = '';
+                start.style.display = 'none'
+                magoGif.style.display = 'none'
+                dibujarAhorcado()
+                palabraRandom()
+                dibujarPalabra()
+
+                //evento cuando aprieto una letra en el teclado
+                document.addEventListener( 'keydown', eventoLetra )
+
+
+            } );
+
+            volverBtn.addEventListener( 'mouseenter', () =>
+            {
+                hoverSound.currentTime = 0;
+                hoverSound.play();
+            } );
+
+            start.addEventListener( 'mouseenter', () =>
+            {
+                hoverSound.currentTime = 0;
+                hoverSound.play();
+            } );
+
+            volverBtn.addEventListener( 'click', () =>
+            {
+                window.location.href = 'cargando.html';
+            } );
+
+
+            botonMute.addEventListener( 'click', () =>
+            {
+                if ( musica.paused )
+                {
+                    musica.play()
+                    icono.src = 'altavoz.png'
+                    musicaMuteadaPorUsuario = false;
+                } else
+                {
+                    musica.pause();
+                    icono.src = 'altavozMute.png'
+                    musicaMuteadaPorUsuario = true;
+                }
+            } );
+
+
+            const fondo = document.createElement( 'div' );
+            fondo.style.position = 'fixed';
+            fondo.style.top = '0';
+            fondo.style.left = '0';
+            fondo.style.width = '105vw';
+            fondo.style.height = '100vh';
+            fondo.style.backgroundImage = "url('nieve.gif')";
+            fondo.style.backgroundSize = 'cover';
+            fondo.style.backgroundRepeat = 'no-repeat';
+            fondo.style.backgroundPosition = 'center';
+            fondo.style.imageRendering = 'pixelated';
+            fondo.style.opacity = '1';
+            fondo.style.zIndex = '-1';
+            fondo.style.transition = 'opacity 2s ease-in-out';
+            document.body.appendChild( fondo );
+
+            musica.play().catch( e => console.log( "Error al reproducir música:", e ) );
+
+
+
+
+            let palabras = [
+                "casa", "arbol", "sol", "luz", "agua", "fuego", "tierra", "viento", "mar", "cielo",
+                "flor", "nube", "pajaro", "estrella", "lago", "montana", "rio", "lluvia", "nieve", "trueno",
+                "camino", "puerta", "ventana", "libro", "mesa", "silla", "auto", "tren", "avion", "barco",
+                "ciudad", "pueblo", "campo", "bosque", "playa", "nino", "nina", "hombre", "mujer", "amigo",
+                "familia", "escuela", "trabajo", "comida", "fruta", "pan", "leche", "vino", "queso", "cafe",
+                "lapiz", "papel", "cuadro", "pared", "techo", "suelo", "pelota", "zapato", "camisa", "pantalon",
+                "reloj", "radio", "telefono", "musica", "cancion", "pelicula", "serie", "foto", "video", "juego",
+                "ordenador", "pantalla", "raton", "teclado", "internet", "correo", "mensaje", "aplicacion", "programa", "archivo",
+                "carpeta", "robot", "maquina", "motor", "energia", "electrico", "bateria", "cable", "enchufe", "luz",
+                "bombilla", "espejo", "ventilador", "calefaccion", "aire", "clima", "invierno", "verano", "otono", "primavera",
+                "dia", "noche", "manana", "tarde", "hora", "minuto", "segundo", "calendario", "reloj", "fecha",
+                "lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo", "enero", "febrero", "marzo",
+                "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre", "tiempo",
+                "reloj", "sol", "luna", "planeta", "tierra", "universo", "galaxia", "estrella", "cometa", "astronauta",
+                "cohete", "espacio", "gravedad", "orbita", "telescopio", "exploracion", "mapa", "brujula", "direccion", "norte",
+                "sur", "este", "oeste", "montana", "valle", "desierto", "isla", "oceano", "mar", "rio",
+                "lago", "catarata", "volcan", "cueva", "selva", "jungla", "pradera", "sabana", "glaciar", "polo",
+                "animal", "perro", "gato", "pajaro", "pez", "vaca", "caballo", "oveja", "cerdo", "conejo",
+                "raton", "jirafa", "elefante", "leon", "tigre", "oso", "zorro", "lobo", "mono", "cebra",
+                "camello", "hipopotamo", "rinoceronte", "aguila", "halcon", "buitre", "pinguino", "ballena", "delfin", "tiburon",
+                "cocodrilo", "serpiente", "rana", "lagarto", "abeja", "mariposa", "mosca", "hormiga", "escarabajo", "arana",
+                "pulga", "garrapata", "escorpion", "cangrejo", "langosta", "calamar", "pulpo", "estrella", "erizo", "coral",
+                "arbol", "hoja", "rama", "raiz", "flor", "fruto", "semilla", "tronco", "bosque", "selva",
+                "pino", "roble", "olivo", "palmera", "manzano", "peral", "naranjo", "limonero", "cerezo", "melocotonero",
+                "uva", "platano", "manzana", "pera", "naranja", "limon", "fresa", "cereza", "melon", "sandia",
+                "pina", "mango", "papaya", "kiwi", "ciruela", "albaricoque", "higo", "granada", "mandarina", "frambuesa",
+                "arandano", "zanahoria", "tomate", "lechuga", "pepino", "calabacin", "berenjena", "pimiento", "cebolla", "ajo",
+                "patata", "batata", "yuca", "maiz", "arroz", "trigo", "avena", "cebada", "centeno", "soja",
+                "garbanzo", "lenteja", "judia", "habas", "chicharo", "espinaca", "acelga", "brocoli", "coliflor", "repollo",
+                "huevo", "carne", "pollo", "cerdo", "res", "cordero", "pavo", "jamon", "salchicha", "bistec",
+                "pescado", "atun", "salmon", "sardina", "anchoa", "marisco", "gamba", "langostino", "camaron", "mejillon",
+                "almeja", "ostra", "pulpo", "calamar", "pan", "tostada", "galleta", "pastel", "tarta", "bizcocho",
+                "helado", "chocolate", "caramelo", "dulce", "azucar", "sal", "pimienta", "vinagre", "aceite", "mantequilla",
+                "queso", "leche", "yogur", "nata", "crema", "sopa", "ensalada", "paella", "tortilla", "pizza",
+                "hamburguesa", "sandwich", "bocadillo", "arroz", "pasta", "espagueti", "macarrones", "fideos", "salsa", "tomate",
+                "mayonesa", "mostaza", "ketchup", "agua", "zumo", "refresco", "gaseosa", "cerveza", "vino", "licor",
+                "cafe", "te", "infusion", "leche", "cacao", "batido", "granizado", "limonada", "bebida", "comida"
+            ];
+
+
+
+
+        } );
+    </script>
 </body>
 
-<script>
-    const screen = document.querySelector( '#background' )
-    const volverBtn = document.getElementById( 'volverBtn' );
-    const musica = document.getElementById( 'musica' )
-    const hoverSound = document.getElementById( 'hoverSound' )
 
-    window.addEventListener( 'load', () =>
-    {
-        const fondo = document.createElement( 'div' );
-        const musica = document.getElementById( 'musica' )
-        fondo.style.position = 'fixed';
-        fondo.style.top = '0';
-        fondo.style.left = '0';
-        fondo.style.width = '100vw';
-        fondo.style.height = '100vh';
-        fondo.style.backgroundImage = "url('fondoMini.gif')";
-        fondo.style.backgroundSize = 'cover';
-        fondo.style.backgroundRepeat = 'no-repeat';
-        fondo.style.backgroundPosition = 'center';
-        fondo.style.imageRendering = 'pixelated';
-        fondo.style.opacity = '1';
-        fondo.style.zIndex = '-1';
-        fondo.style.transition = 'opacity 2s ease-in-out';
-        document.body.appendChild( fondo );
-
-        musica.play()
-
-    } )
-
-    window.addEventListener( 'load', ajustarPantalla );
-    window.addEventListener( 'resize', ajustarPantalla );
-
-    function ajustarPantalla()
-    {
-        const backgroundJuego = document.getElementById( 'backgroundJuego' );
-        const pantalla = document.getElementById( 'pantalla' );
-
-        const bgWidth = backgroundJuego.clientWidth;
-        const bgHeight = backgroundJuego.clientHeight;
-
-        pantalla.style.width = ( bgWidth * widthRatio ) + 'px';
-        pantalla.style.height = ( bgHeight * heightRatio ) + 'px';
-        pantalla.style.top = ( bgHeight * topRatio ) + 'px';
-        pantalla.style.left = ( bgWidth * leftRatio ) + 'px';
-    }
-
-    volverBtn.addEventListener( 'mouseenter', () =>
-    {
-        hoverSound.currentTime = 0
-        hoverSound.play()
-    } )
-    volverBtn.addEventListener( 'click', () =>
-    {
-        window.location.href = 'cargando.html';
-    } );
-</script>
 
 </html>
