@@ -15,7 +15,7 @@
             <h1 class="mundo">¡Enhorabuena!</h1>
             <h1 class="mundo">¡Has entrado en mi mundo!</h1>
             <a href="#" id="sobreMi">Sobre mí</a>
-            <a href="">Proyectos</a>
+            <a href="#" id="proyectos">Proyectos</a>
             <a href="#" id="contactame">Contactame</a>
         </div>
         <br><br><br><br><br><br><br>
@@ -98,6 +98,74 @@
     <!-- --------------------------------------------------------------- -->
 
 
+    <!----------------------- CONTENEDOR PROYECTOS -------------------->
+    <div id="contenedorProyectos" class="proyectos">
+        <div class="contenido">
+            <h1 class="textoProyectos">Proyectos</h1>
+            <p class="textoClicka">Clicka en uno para ver mas detalles</p>
+            <a href="" id="cerrarProyectos">X</a>
+            <br><br>
+
+            <div class="proyectosContainer">
+                <div class="proyectoHelpVini">
+                    <div class="contenidoVisible">
+                        <div class="marcoPixel">
+                            <video src="helpvini.mp4" autoplay loop muted class="helpviniVideo"></video>
+                        </div>
+                        <p class="tituloProyecto">HELP VINI ESCAPEROOM</p>
+                    </div>
+                </div>
+                <div class="proyectoHelpViniHover" id="proyectoHelpViniHover">
+                    <div class="contenidoHover">
+                        <a href="" id="cerrarHelpVini">X</a>
+                        <p class="tituloProyecto">HELP VINI ESCAPEROOM</p>
+                        <div class="contenido4">
+                            <div class="descripcion">
+                                <video src="helpvini.mp4" autoplay loop muted class="videoHoverVini"></video>
+                                <p class="descHelpVini">Help Vini EscapeRoom es un Escape Room interáctivo cuyo objetivo
+                                    es concienciar sobre los peligros reales que a
+                                    día de
+                                    hoy acechan en internet.
+                                    <br><br>
+                                    El usuario se enfrentará a una prueba contrareloj, en la que, a través de pistas,
+                                    deberá
+                                    devolver la identidad digital del jugador de fútbol Vinicius, tratando de no cometer
+                                    los
+                                    mismos errores que cometió el jugador y que le llevó a esa situación.
+                                </p>
+                            </div>
+                            <div class="skills">
+                                <h1 class="tituloSkills">Skills</h1>
+                                <div class="skills-grid">
+                                    <img src="laravel.png" alt="Laravel">
+                                    <img src="vue.png" alt="Vue">
+                                    <img src="mysql.png" alt="MySQL">
+                                    <img src="javascript.png" alt="JavaScript">
+                                    <img src="php.png" alt="PHP">
+                                    <img src="html.png" alt="HTML">
+                                    <img src="tailwindcss.png" alt="Tailwind CSS">
+                                    <img src="aws.png" alt="AWS">
+                                    <img src="docker.png" alt="Docker">
+                                </div>
+                                <br><br><br><br>
+                                <div>
+                                    <p class="cv1">
+                                        <a href="https://github.com/beniatrobles/HelpViniEscaperoom" class="cv" id="cv" target="_blank"  rel="noopener noreferrer">Repositorio Github</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- Aquí puedes añadir más .proyectoXXX con el mismo estilo -->
+            </div>
+        </div>
+    </div>
+    <!-- --------------------------------------------------------------- -->
+
+
     <!----------------------- CONTENEDOR CONTACTAME -------------------->
     <div id="contenedorContactame" class="contactame">
         <div class="contenido">
@@ -135,6 +203,7 @@
         const paginaLibro = document.getElementById( "paginaLibro" )
         const contenedor = document.getElementById( 'contenedorSobreMi' );
         const contenedorContactame = document.getElementById( 'contenedorContactame' );
+        const contenedorProyectos = document.getElementById( 'contenedorProyectos' );
         const cerrarBtn = document.getElementById( 'cerrarSobreMi' );
         const imgTerror = document.querySelector( '.imgSobreMi' )
         const imgTerror1 = document.getElementById( 'imgTerror' );
@@ -147,6 +216,11 @@
         const enviarMensaje = document.getElementById( 'enviarMensaje' )
         const minijuego = document.getElementById( 'minijuego' )
         let musicaMuteadaPorUsuario = false;
+
+
+        const proyectoHelpVini = document.querySelector( '.proyectoHelpVini' );
+        const hoverVini = document.querySelector( '.proyectoHelpViniHover' );
+
 
         window.addEventListener( 'load', () =>
         {
@@ -233,6 +307,21 @@
             cerrar.play()
         } );
 
+        document.getElementById( 'proyectos' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            document.getElementById( 'contenedorProyectos' ).style.display = 'flex'
+            paginaLibro.play()
+        } )
+
+        document.getElementById( 'cerrarProyectos' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            document.getElementById( 'contenedorProyectos' ).style.display = 'none'
+            cerrar.play()
+        } );
+
+
         document.getElementById( 'contactame' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
@@ -244,6 +333,13 @@
         {
             e.preventDefault();
             document.getElementById( 'contenedorContactame' ).style.display = 'none'
+            cerrar.play()
+        } );
+
+        document.getElementById( 'cerrarHelpVini' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            document.getElementById( 'proyectoHelpViniHover' ).style.display = 'none'
             cerrar.play()
         } );
 
@@ -325,9 +421,13 @@
             paginaLibro.play()
         } )
 
+        proyectoHelpVini.addEventListener( 'click', () =>
+        {
+            hoverVini.style.display = 'block';
+        } );
 
 
-      
+
     </script>
     </script>
 
