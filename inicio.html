@@ -33,17 +33,13 @@
         <button id="quitarMusica"><img src="altavoz.png" alt="" class="altavoz"></button>
     </div>
 
-
-
     <audio id="musica" loop>
         <source src="inicio.mp3" type="audio/mp3" />
         Tu navegador no soporta el elemento de audio.
     </audio>
 
     <audio id="hoverSound" src="001_Hover_01.wav"></audio>
-
     <audio id="paginaLibro" src="turn-a-page.mp3"></audio>
-
     <audio id="risaTerror" src="risaTerror.mp3"></audio>
     <audio id="ambienteTerror" src="ambienteTerror.mp3"></audio>
     <audio id="cerrar" src="cerrar.mp3"></audio>
@@ -97,7 +93,6 @@
     </div>
     <!-- --------------------------------------------------------------- -->
 
-
     <!----------------------- CONTENEDOR PROYECTOS -------------------->
     <div id="contenedorProyectos" class="proyectos">
         <div class="contenido">
@@ -122,36 +117,35 @@
                         <div class="contenido4">
                             <div class="descripcion">
                                 <video src="helpvini.mp4" autoplay loop muted class="videoHoverVini"></video>
-                                <p class="descHelpVini">Help Vini EscapeRoom es un Escape Room interáctivo cuyo objetivo
-                                    es concienciar sobre los peligros reales que a
-                                    día de
-                                    hoy acechan en internet.
-                                    <br><br>
-                                    El usuario se enfrentará a una prueba contrareloj, en la que, a través de pistas,
-                                    deberá
-                                    devolver la identidad digital del jugador de fútbol Vinicius, tratando de no cometer
-                                    los
-                                    mismos errores que cometió el jugador y que le llevó a esa situación.
+                                <p class="descHelpVini">
+                                    Help Vini EscapeRoom es un Escape Room interáctivo cuyo objetivo es concienciar
+                                    sobre
+                                    <span class="resaltarClave">los peligros reales de internet</span>. El usuario se
+                                    enfrentará a una
+                                    <span class="resaltarClave">prueba contrarreloj</span>, devolviendo la identidad
+                                    digital de Vinicius
+                                    sin cometer los mismos errores que le llevaron a esa situación.
                                 </p>
                             </div>
                             <div class="skills">
                                 <h1 class="tituloSkills">Skills</h1>
                                 <div class="skills-grid">
-                                    <img src="laravel.png" alt="Laravel">
-                                    <img src="vue.png" alt="Vue">
-                                    <img src="mysql.png" alt="MySQL">
-                                    <img src="javascript.png" alt="JavaScript">
-                                    <img src="php.png" alt="PHP">
-                                    <img src="html.png" alt="HTML">
-                                    <img src="tailwindcss.png" alt="Tailwind CSS">
-                                    <img src="aws.png" alt="AWS">
-                                    <img src="docker.png" alt="Docker">
+                                    <img src="laravel.png" alt="Laravel" title="Laravel">
+                                    <img src="vue.png" alt="Vue" title="Vue">
+                                    <img src="mysql.png" alt="MySQL" title="MySQL">
+                                    <img src="javascript.png" alt="JavaScript" title="JavaScript">
+                                    <img src="php.png" alt="PHP" title="PHP">
+                                    <img src="html.png" alt="HTML" title="HTML">
+                                    <img src="tailwindcss.png" alt="Tailwind CSS" title="Tailwind CSS">
+                                    <img src="aws.png" alt="AWS" title="AWS">
+                                    <img src="docker.png" alt="Docker" title="Docker">
                                 </div>
                                 <br><br><br><br>
                                 <div>
                                     <p class="cv1">
-                                        <a href="https://github.com/beniatrobles/HelpViniEscaperoom" class="cv" id="cv"
-                                            target="_blank" rel="noopener noreferrer">Repositorio Github</a>
+                                        <a href="https://github.com/beniatrobles/HelpViniEscaperoom" class="cv"
+                                            id="cvhelpvini" target="_blank" rel="noopener noreferrer">Repositorio
+                                            Github</a>
                                     </p>
                                 </div>
                             </div>
@@ -160,12 +154,58 @@
                     </div>
                 </div>
 
-                <!-- Aquí puedes añadir más .proyectoXXX con el mismo estilo -->
+                <div class="proyectoSpotifree">
+                    <div class="contenidoVisible">
+                        <div class="marcoPixel">
+                            <video src="spotifree.mp4" autoplay loop muted class="spotifreeVideo"></video>
+                        </div>
+                        <p class="tituloProyecto">SPOTIFREE</p>
+                    </div>
+                </div>
+
+                <div class="proyectoSpotifreeHover" id="proyectoSpotifreeHover">
+                    <div class="contenidoHover">
+                        <a href="" id="cerrarSpotifree">X</a>
+                        <p class="tituloProyecto">SPOTIFREE</p>
+                        <div class="contenido4">
+                            <div class="descripcion">
+                                <video src="spotifree.mp4" autoplay loop muted class="videoHoverSpotifree"></video>
+                                <p class="descSpotifree">
+                                    Spotifree es un <span class="resaltarClave">reproductor de música gratuito</span>
+                                    que permite crear
+                                    <span class="resaltarClave">listas de reproducción personalizadas</span>, descubrir
+                                    <span class="resaltarClave">nuevos artistas</span> y disfrutar de música sin
+                                    interrupciones, completamente
+                                    integrado en la web.
+                                </p>
+                            </div>
+                            <div class="skills">
+                                <h1 class="tituloSkills">Skills</h1>
+                                <div class="skills-grid">
+                                    <img src="javascript.png" alt="JavaScript" title="JavaScript">
+                                    <img src="html.png" alt="HTML" title="HTML">
+                                    <img src="css.png" alt="CSS" title="CSS">
+                                    <img src="react.png" alt="React" title="React">
+                                    <img src="node.png" alt="Node.js" title="Node.js">
+                                    <img src="mongodb.png" alt="PostgreSQL" title="PostgreSQL">
+                                </div>
+                                <br><br><br><br>
+                                <div>
+                                    <p class="cv1">
+                                        <a href="https://github.com/beniatrobles/Spotifree" class="cv" id="cvSpotifree"
+                                            target="_blank" rel="noopener noreferrer">
+                                            Repositorio Github
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- --------------------------------------------------------------- -->
-
 
     <!----------------------- CONTENEDOR CONTACTAME -------------------->
     <div id="contenedorContactame" class="contactame">
@@ -174,15 +214,12 @@
             <a href="" id="cerrarContactame">X</a>
             <br><br>
             <div class="contenido2">
-
                 <form name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field"
                     action="/gracias.html">
                     <input type="hidden" name="form-name" value="contacto" />
-
                     <p hidden>
                         <label>Si ves este campo, no rellenes <input name="bot-field" /></label>
                     </p>
-
                     <label for="nombre">Nombre:</label><br>
                     <input type="text" id="nombre" name="nombre" required><br><br>
 
@@ -223,15 +260,14 @@
         const minijuego = document.getElementById( 'minijuego' )
         let musicaMuteadaPorUsuario = false;
 
-
         const proyectoHelpVini = document.querySelector( '.proyectoHelpVini' );
         const hoverVini = document.querySelector( '.proyectoHelpViniHover' );
 
+        const proyectoSpotifree = document.querySelector( '.proyectoSpotifree' );
+        const hoverSpotifree = document.getElementById( 'proyectoSpotifreeHover' );
 
         window.addEventListener( 'load', () =>
         {
-            const musica = document.getElementById( 'musica' );
-
             const fondo = document.createElement( 'div' );
             fondo.style.position = 'fixed';
             fondo.style.top = '0';
@@ -248,20 +284,17 @@
             fondo.style.transition = 'opacity 2s ease-in-out';
             document.body.appendChild( fondo );
 
-            // Iniciar fade-in del fondo
             requestAnimationFrame( () =>
             {
                 fondo.style.opacity = '1';
             } );
 
-            // Empieza la música justo al iniciar el fade-in del fondo
             musica.currentTime = 0;
             musica.play().catch( err =>
             {
                 console.warn( 'El navegador bloqueó la reproducción automática:', err );
             } );
 
-            // Después de 2 segundos (cuando termina el fade-in), inicia la animación del contenido
             setTimeout( () =>
             {
                 screen.style.animation = 'entrarDesdeArriba 4s ease-out forwards';
@@ -270,7 +303,6 @@
                     const realizado = document.querySelector( '.realizado' );
                     realizado.classList.add( 'visible' );
                 }, 4200 );
-
             }, 2000 );
         } );
 
@@ -298,57 +330,80 @@
             }
         } );
 
+        // Funciones modales
+        function abrirModal( modal )
+        {
+            modal.style.display = 'block';
+            modal.style.zIndex = 50;
+            if ( modal !== hoverVini ) hoverVini.style.zIndex = 20;
+            if ( modal !== hoverSpotifree ) hoverSpotifree.style.zIndex = 20;
+        }
+
+        function cerrarModal( modal )
+        {
+            modal.style.display = 'none';
+        }
+
+        // Abrir modales al hacer clic en los proyectos
+        proyectoHelpVini.addEventListener( 'click', () => abrirModal( hoverVini ) );
+        proyectoSpotifree.addEventListener( 'click', () => abrirModal( hoverSpotifree ) );
+
+
+
+        // Cerrar modales
+        document.getElementById( 'cerrarHelpVini' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            cerrarModal( hoverVini );
+        } );
+
+        document.getElementById( 'cerrarSpotifree' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            cerrarModal( hoverSpotifree );
+        } );
 
         document.getElementById( 'sobreMi' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
-            document.getElementById( 'contenedorSobreMi' ).style.display = 'flex'
+            contenedor.style.display = 'flex'
             paginaLibro.play()
         } );
 
         document.getElementById( 'cerrarSobreMi' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
-            document.getElementById( 'contenedorSobreMi' ).style.display = 'none'
+            contenedor.style.display = 'none'
             cerrar.play()
         } );
 
         document.getElementById( 'proyectos' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
-            document.getElementById( 'contenedorProyectos' ).style.display = 'flex'
+            contenedorProyectos.style.display = 'flex'
             paginaLibro.play()
-        } )
+        } );
 
         document.getElementById( 'cerrarProyectos' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
-            document.getElementById( 'contenedorProyectos' ).style.display = 'none'
+            contenedorProyectos.style.display = 'none'
             cerrar.play()
         } );
-
 
         document.getElementById( 'contactame' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
-            document.getElementById( 'contenedorContactame' ).style.display = 'flex'
+            contenedorContactame.style.display = 'flex'
             paginaLibro.play()
-        } )
+        } );
 
         document.getElementById( 'cerrarContactame' ).addEventListener( 'click', ( e ) =>
         {
             e.preventDefault();
-            document.getElementById( 'contenedorContactame' ).style.display = 'none'
+            contenedorContactame.style.display = 'none'
             cerrar.play()
         } );
-
-        document.getElementById( 'cerrarHelpVini' ).addEventListener( 'click', ( e ) =>
-        {
-            e.preventDefault();
-            document.getElementById( 'proyectoHelpViniHover' ).style.display = 'none'
-            cerrar.play()
-        } );
-
 
         imgTerror.addEventListener( 'mouseenter', () =>
         {
@@ -359,85 +414,118 @@
             musica.pause()
             imgTerror.classList.add( 'oculto' )
             imgTerror1.classList.remove( 'oculto' )
-
-        } )
+        } );
 
         imgTerror1.addEventListener( 'mouseleave', () =>
         {
             risaTerror.pause();
             ambienteTerror.pause();
-            if ( !musicaMuteadaPorUsuario )
-            {
-                musica.play();
-            }
+            if ( !musicaMuteadaPorUsuario ) musica.play();
             imgTerror.style.animation = 'none';
             imgTerror.style.opacity = '1';
             imgTerror.classList.remove( 'oculto' );
             imgTerror1.classList.add( 'oculto' );
-
-
-
         } );
 
-        cv.addEventListener( 'mouseenter', () =>
+        // Sonidos hover en botones y links
+        [ cv, instagram, github, enviarMensaje ].forEach( el =>
         {
-            hoverSound.currentTime = 0;
-            hoverSound.play()
-        } )
+            el.addEventListener( 'mouseenter', () =>
+            {
+                hoverSound.currentTime = 0;
+                hoverSound.play()
+            } );
+            el.addEventListener( 'click', () => cerrar.play() );
+        } );
 
-        cv.addEventListener( 'click', () =>
-        {
-            cerrar.play()
-        } )
-
-        instagram.addEventListener( 'mouseenter', () =>
-        {
-            hoverSound.currentTime = 0;
-            hoverSound.play()
-        } )
-
-        instagram.addEventListener( 'click', () =>
-        {
-            cerrar.play()
-        } )
-        github.addEventListener( 'mouseenter', () =>
-        {
-            hoverSound.currentTime = 0;
-            hoverSound.play()
-        } )
-
-        github.addEventListener( 'click', () =>
-        {
-            cerrar.play()
-        } )
-
-        enviarMensaje.addEventListener( 'mouseenter', () =>
-        {
-            hoverSound.currentTime = 0
-            hoverSound.play()
-        } )
-
-        enviarMensaje.addEventListener( 'click', () =>
-        {
-            cerrar.play()
-        } )
-
-        minijuego.addEventListener( 'click', () =>
-        {
-            paginaLibro.play()
-        } )
+        minijuego.addEventListener( 'click', () => paginaLibro.play() );
 
         proyectoHelpVini.addEventListener( 'click', () =>
         {
             hoverVini.style.display = 'block';
+            paginaLibro.currentTime = 0;
+            paginaLibro.play();
+        } );
+
+        proyectoHelpVini.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
+        proyectoHelpVini.addEventListener( 'mouseleave', () =>
+        {
+            hoverSound.pause();
+            hoverSound.currentTime = 0;
         } );
 
 
 
-    </script>
-    </script>
+        proyectoSpotifree.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0; // Reinicia el sonido
+            hoverSound.play();
+        } );
 
+        proyectoSpotifree.addEventListener( 'mouseleave', () =>
+        {
+            hoverSound.pause();
+            hoverSound.currentTime = 0;
+        } );
 
+        proyectoSpotifree.addEventListener( 'click', () =>
+        {
+            hoverSpotifree.style.display = 'block';
+            paginaLibro.currentTime = 0;
+            paginaLibro.play();
+        } );
+
+        // Cerrar Help Vini
+        document.getElementById( 'cerrarHelpVini' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            hoverVini.style.display = 'none';
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        // Cerrar Spotifree
+        document.getElementById( 'cerrarSpotifree' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            hoverSpotifree.style.display = 'none';
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        const cvHelpVini = document.querySelector( '#cvhelpvini' ); // ya lo tenías
+        cvHelpVini.addEventListener( 'click', () =>
+        {
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        cvHelpVini.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
+        // Repositorio Spotifree
+        const cvSpotifree = document.querySelector( '#cvSpotifree' );
+        cvSpotifree.addEventListener( 'click', () =>
+        {
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        cvSpotifree.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
+    </script>
 </body>
 
 </html>
