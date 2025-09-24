@@ -637,9 +637,10 @@ button:hover {
 .proyectosContainer {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px; /* espacio entre proyectos */
+    gap: 40px;
+    /* espacio entre proyectos */
     padding: 20px;
-    justify-items: center; 
+    justify-items: center;
 }
 
 .proyectoHelpVini {
@@ -722,16 +723,16 @@ button:hover {
     color: #c9a66b;
 } */
 
-.contenido4{
+.contenido4 {
     display: flex;
     gap: 5%;
 }
 
-.descripcion{
+.descripcion {
     width: 50%;
 }
 
-.videoHoverVini{
+.videoHoverVini {
     width: 500px;
 }
 
@@ -752,19 +753,22 @@ button:hover {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 1rem; 
-    justify-items: center; 
-    align-items: center; 
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    justify-items: center;
+    align-items: center;
 }
 
 .skills-grid img {
-    width: 90px;
+    width: 80px;
+    height: auto;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
 .skills-grid img:hover {
-    transform: scale(1.1);
+    transform: scale(1.3);
+    /* efecto hover más sutil si quieres */
 }
 
 .proyectoSpotifree {
@@ -828,11 +832,12 @@ button:hover {
     color: #c9a66b;
 } */
 
-.descSpotifree, .descHelpVini {
-    padding: 15px;                       
+.descSpotifree,
+.descHelpVini {
+    padding: 15px;
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
-    color: var(--texto);               
+    color: var(--texto);
     line-height: 1.6em;
     text-shadow: 1px 1px 0 #000;
     max-width: 600px;
@@ -843,15 +848,15 @@ button:hover {
 }
 
 .resaltarClave {
-    color: var(--f11);           
-    font-weight: bold;           
-    text-shadow: 1px 1px 0 #000; 
+    color: var(--f11);
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #000;
     transition: all 0.3s ease;
 }
 
 .resaltarClave:hover {
-    color: #ffcc00;             
-    transform: scale(1.05);     
+    color: #ffcc00;
+    transform: scale(1.05);
 }
 
 
@@ -929,16 +934,15 @@ button:hover {
 
 .videoHoverSistemaVentas {
     width: 500px;
-    max-width: 100%;
     border-radius: 8px;
 }
 
 /* ===== DESCRIPCIÓN ===== */
 .descSistemaVentas {
-    padding: 15px;                       
+    padding: 15px;
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
-    color: var(--texto);               
+    color: var(--texto);
     line-height: 1.6em;
     text-shadow: 1px 1px 0 #000;
     max-width: 600px;
@@ -952,59 +956,4 @@ button:hover {
 .proyectoSistemaVentasHover.active .descSistemaVentas {
     opacity: 1;
     transform: translateY(0);
-}
-
-/* ===== SKILLS ===== */
-.skills {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.skills .tituloSkills {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 18px;
-    color: var(--texto);
-    margin-bottom: 15px;
-}
-
-.skills-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-}
-
-.skills-grid img {
-    width: 50px;
-    height: 50px;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-.skills-grid img:hover {
-    transform: scale(1.2);
-}
-
-/* ===== BOTÓN REPOSITORIO ===== */
-.cv1 {
-    margin-top: 30px;
-    text-align: center;
-}
-
-.cv {
-    font-family: 'Press Start 2P', cursive;
-    color: #eac784;
-    background: transparent;
-    border: 2px solid #eac784;
-    padding: 10px 20px;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
-
-.cv:hover {
-    background: #eac784;
-    color: #111;
-    box-shadow: 0 0 10px #eac784;
 }

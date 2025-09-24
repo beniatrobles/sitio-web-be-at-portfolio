@@ -226,21 +226,13 @@
                                     Sistema de Ventas es una <span class="resaltarClave">aplicación web de gestión de
                                         ventas</span>
                                     que permite administrar clientes, productos y transacciones de manera eficiente.
-                                    Incluye <span class="resaltarClave">reportes automáticos</span>, control de
-                                    inventario y una interfaz
-                                    optimizada para mejorar la productividad empresarial.
-                                </p>
+                                    
                             </div>
                             <div class="skills">
                                 <h1 class="tituloSkills">Skills</h1>
                                 <div class="skills-grid">
-                                    <img src="laravel.png" alt="Laravel" title="Laravel">
+                                    <img src="java.png" alt="Java" title="Java Swing">
                                     <img src="mysql.png" alt="MySQL" title="MySQL">
-                                    <img src="javascript.png" alt="JavaScript" title="JavaScript">
-                                    <img src="php.png" alt="PHP" title="PHP">
-                                    <img src="html.png" alt="HTML" title="HTML">
-                                    <img src="css.png" alt="CSS" title="CSS">
-                                    <img src="bootstrap.png" alt="Bootstrap" title="Bootstrap">
                                 </div>
                                 <br><br><br><br>
                                 <div>
@@ -319,6 +311,9 @@
         const proyectoSpotifree = document.querySelector( '.proyectoSpotifree' );
         const hoverSpotifree = document.getElementById( 'proyectoSpotifreeHover' );
 
+        const proyectoSistemaVentas = document.querySelector( '.proyectoSistemaVentas' );
+        const hoverVentas = document.getElementById( 'proyectoSistemaVentasHover' );
+
         window.addEventListener( 'load', () =>
         {
             const fondo = document.createElement( 'div' );
@@ -343,7 +338,7 @@
             } );
 
             // musica.currentTime = 0;
-            
+
             setTimeout( () =>
             {
                 screen.style.animation = 'entrarDesdeArriba 4s ease-out forwards';
@@ -574,6 +569,48 @@
             hoverSound.play();
         } );
 
+        // Proyecto SistemaVentas
+        proyectoSistemaVentas.addEventListener( 'click', () =>
+        {
+            hoverVentas.style.display = 'block';
+            paginaLibro.currentTime = 0;
+            paginaLibro.play();
+        } );
+
+        proyectoSistemaVentas.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
+        proyectoSistemaVentas.addEventListener( 'mouseleave', () =>
+        {
+            hoverSound.pause();
+            hoverSound.currentTime = 0;
+        } );
+
+        // Cerrar modal SistemaVentas
+        document.getElementById( 'cerrarSistemaVentas' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            hoverVentas.style.display = 'none';
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        // Repositorio SistemaVentas
+        const cvSistemaVentas = document.querySelector( '#cvSistemaVentas' );
+        cvSistemaVentas.addEventListener( 'click', () =>
+        {
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        cvSistemaVentas.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
     </script>
 </body>
 
