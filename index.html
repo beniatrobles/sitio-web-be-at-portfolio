@@ -28,7 +28,7 @@
     <div class="realizado">
         <h1>Realizado por BEÑAT ROBLES</h1>
     </div>
-    <div class="mute">
+    <!-- <div class="mute">
         <p>Mutear la cancion</p>
         <button id="quitarMusica"><img src="altavoz.png" alt="" class="altavoz"></button>
     </div>
@@ -36,7 +36,7 @@
     <audio id="musica" loop>
         <source src="inicio.mp3" type="audio/mp3" />
         Tu navegador no soporta el elemento de audio.
-    </audio>
+    </audio> -->
 
     <audio id="hoverSound" src="001_Hover_01.wav"></audio>
     <audio id="paginaLibro" src="turn-a-page.mp3"></audio>
@@ -202,6 +202,58 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="proyectoSistemaVentas">
+                    <div class="contenidoVisible">
+                        <div class="marcoPixel">
+                            <video src="sistemaVentas.mp4" autoplay loop muted class="sistemaVentasVideo"></video>
+                        </div>
+                        <p class="tituloProyecto">SISTEMA DE VENTAS</p>
+                    </div>
+                </div>
+
+                <!-- Modal al hacer clic -->
+                <div class="proyectoSistemaVentasHover" id="proyectoSistemaVentasHover">
+                    <div class="contenidoHover">
+                        <a href="" id="cerrarSistemaVentas">X</a>
+                        <p class="tituloProyecto">SISTEMA DE VENTAS</p>
+                        <div class="contenido4">
+                            <div class="descripcion">
+                                <video src="sistemaVentas.mp4" autoplay loop muted
+                                    class="videoHoverSistemaVentas"></video>
+                                <p class="descSistemaVentas">
+                                    Sistema de Ventas es una <span class="resaltarClave">aplicación web de gestión de
+                                        ventas</span>
+                                    que permite administrar clientes, productos y transacciones de manera eficiente.
+                                    Incluye <span class="resaltarClave">reportes automáticos</span>, control de
+                                    inventario y una interfaz
+                                    optimizada para mejorar la productividad empresarial.
+                                </p>
+                            </div>
+                            <div class="skills">
+                                <h1 class="tituloSkills">Skills</h1>
+                                <div class="skills-grid">
+                                    <img src="laravel.png" alt="Laravel" title="Laravel">
+                                    <img src="mysql.png" alt="MySQL" title="MySQL">
+                                    <img src="javascript.png" alt="JavaScript" title="JavaScript">
+                                    <img src="php.png" alt="PHP" title="PHP">
+                                    <img src="html.png" alt="HTML" title="HTML">
+                                    <img src="css.png" alt="CSS" title="CSS">
+                                    <img src="bootstrap.png" alt="Bootstrap" title="Bootstrap">
+                                </div>
+                                <br><br><br><br>
+                                <div>
+                                    <p class="cv1">
+                                        <a href="https://github.com/beniatrobles/SistemaVentas" class="cv"
+                                            id="cvSistemaVentas" target="_blank" rel="noopener noreferrer">
+                                            Repositorio Github
+                                        </a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -240,9 +292,9 @@
         const screen = document.querySelector( '.inicio' )
         const links = document.querySelectorAll( '.cuadro a, .minijuego a' )
         const hoverSound = document.getElementById( 'hoverSound' )
-        const botonMute = document.getElementById( 'quitarMusica' )
-        const musica = document.getElementById( 'musica' )
-        const icono = botonMute.querySelector( 'img' )
+        // const botonMute = document.getElementById( 'quitarMusica' )
+        // const musica = document.getElementById( 'musica' )
+        // const icono = botonMute.querySelector( 'img' )
         const paginaLibro = document.getElementById( "paginaLibro" )
         const contenedor = document.getElementById( 'contenedorSobreMi' );
         const contenedorContactame = document.getElementById( 'contenedorContactame' );
@@ -258,7 +310,7 @@
         const github = document.getElementById( 'github' )
         const enviarMensaje = document.getElementById( 'enviarMensaje' )
         const minijuego = document.getElementById( 'minijuego' )
-        let musicaMuteadaPorUsuario = false;
+        // let musicaMuteadaPorUsuario = false;
 
         const proyectoHelpVini = document.querySelector( '.proyectoHelpVini' );
         const hoverVini = document.querySelector( '.proyectoHelpViniHover' );
@@ -289,12 +341,8 @@
                 fondo.style.opacity = '1';
             } );
 
-            musica.currentTime = 0;
-            musica.play().catch( err =>
-            {
-                console.warn( 'El navegador bloqueó la reproducción automática:', err );
-            } );
-
+            // musica.currentTime = 0;
+            
             setTimeout( () =>
             {
                 screen.style.animation = 'entrarDesdeArriba 4s ease-out forwards';
@@ -315,20 +363,20 @@
             } );
         } );
 
-        botonMute.addEventListener( 'click', () =>
-        {
-            if ( musica.paused )
-            {
-                musica.play()
-                icono.src = 'altavoz.png'
-                musicaMuteadaPorUsuario = false;
-            } else
-            {
-                musica.pause();
-                icono.src = 'altavozMute.png'
-                musicaMuteadaPorUsuario = true;
-            }
-        } );
+        // botonMute.addEventListener( 'click', () =>
+        // {
+        //     if ( musica.paused )
+        //     {
+        //         musica.play()
+        //         icono.src = 'altavoz.png'
+        //         musicaMuteadaPorUsuario = false;
+        //     } else
+        //     {
+        //         musica.pause();
+        //         icono.src = 'altavozMute.png'
+        //         musicaMuteadaPorUsuario = true;
+        //     }
+        // } );
 
         // Funciones modales
         function abrirModal( modal )
@@ -498,7 +546,7 @@
             cerrar.play();
         } );
 
-        const cvHelpVini = document.querySelector( '#cvhelpvini' ); // ya lo tenías
+        const cvHelpVini = document.querySelector( '#cvhelpvini' );
         cvHelpVini.addEventListener( 'click', () =>
         {
             cerrar.currentTime = 0;
