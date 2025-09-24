@@ -14,41 +14,36 @@
     <h4 class="cargando">
         <span>C</span><span>a</span><span>r</span><span>g</span><span>a</span><span>n</span><span>d</span><span>o</span><span>.</span><span>.</span><span>.</span>
     </h4>
+
+    <script>
+        window.addEventListener('load', () => {
+            // Crear fondo
+            const fondo = document.createElement('div');
+            fondo.style.position = 'fixed';
+            fondo.style.top = '0';
+            fondo.style.left = '0';
+            fondo.style.width = '100vw';
+            fondo.style.height = '100vh';
+            fondo.style.backgroundImage = "url('hogueragif.gif')";
+            fondo.style.backgroundSize = 'cover';
+            fondo.style.backgroundRepeat = 'no-repeat';
+            fondo.style.backgroundPosition = 'center';
+            fondo.style.imageRendering = 'pixelated';
+            fondo.style.opacity = '1';
+            fondo.style.zIndex = '-1';
+            fondo.style.transition = 'opacity 2s ease-in-out';
+            document.body.appendChild(fondo);
+
+            // Obtener página destino desde query string
+            const params = new URLSearchParams(window.location.search);
+            const destino = params.get('destino') || 'index.html'; // si no hay destino, va a index.html
+
+            // Redirigir después de 3 segundos
+            setTimeout(() => {
+                window.location.href = destino;
+            }, 3000);
+        });
+    </script>
 </body>
-
-
-<script>
-
-    window.addEventListener( 'load', () =>
-    {
-        const fondo = document.createElement( 'div' );
-
-        fondo.style.position = 'fixed';
-        fondo.style.top = '0';
-        fondo.style.left = '0';
-        fondo.style.width = '100vw';
-        fondo.style.height = '100vh';
-        fondo.style.backgroundImage = "url('hogueragif.gif')";
-        fondo.style.backgroundSize = 'cover';
-        fondo.style.backgroundRepeat = 'no-repeat';
-        fondo.style.backgroundPosition = 'center';
-        fondo.style.imageRendering = 'pixelated';
-        fondo.style.opacity = '1';
-        fondo.style.zIndex = '-1';
-        fondo.style.transition = 'opacity 2s ease-in-out';
-        document.body.appendChild( fondo );
-
-        const referrer = document.referrer;
-
-        setTimeout( () =>
-        {
-           if(referrer.includes('index.html')){
-             window.location.href = 'minijuego.html';
-           }else if(referrer.includes('minijuego.html')){
-             window.location.href = 'index.html';
-           }
-        }, 3000 );
-    } );
-</script>
 
 </html>

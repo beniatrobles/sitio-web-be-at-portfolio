@@ -58,7 +58,7 @@
             let start = document.getElementById( 'start' );
             const botonMute = document.getElementById( 'quitarMusica' )
             const icono = botonMute.querySelector( 'img' )
-            const tecla = document.getElementById('tecla')
+            const tecla = document.getElementById( 'tecla' )
 
             const magoGif = document.getElementById( 'magoGif' )
             const contenedorPalabra = document.getElementById( 'contenedorPalabra' );
@@ -90,7 +90,7 @@
                 document.removeEventListener( 'keydown', eventoLetra );
                 start.style.display = 'block';
 
-                
+
                 const { children } = contenedorPalabra;
                 for ( let i = 0; i < children.length; i++ )
                 {
@@ -220,6 +220,12 @@
             {
                 hoverSound.currentTime = 0;
                 hoverSound.play();
+            } );
+
+            volverBtn.addEventListener( 'click', () =>
+            {
+                // Volver a inicio con efecto de carga
+                window.location.href = 'cargando.html?destino=index.html';
             } );
 
             start.addEventListener( 'mouseenter', () =>
