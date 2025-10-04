@@ -154,6 +154,57 @@
 
                     </div>
                 </div>
+
+                <!-----------------------CS WEB -------------------->
+
+                <div class="proyectoCSWeb">
+                    <div class="contenidoVisible">
+                        <div class="marcoPixel">
+                            <video src="webCS.mp4" autoplay loop muted class="CSWebVideo"></video>
+                        </div>
+                        <p class="tituloProyecto">COUNTER STRIKE LEAGUE WEB</p>
+                    </div>
+                </div>
+                <div class="proyectoCSWebHover" id="proyectoCSWebHover">
+                    <div class="contenidoHover">
+                        <a href="" id="cerrarCSWeb">X</a>
+                        <p class="tituloProyecto">HELP VINI ESCAPEROOM</p>
+                        <div class="contenido4">
+                            <div class="descripcion">
+                                <video src="webCS.mp4" autoplay loop muted class="videoHoverCSWeb"></video>
+                                <p class="descCSWeb">
+                                    Counter Strike League Web es una plataforma diseñada para la gestión de ligas y
+                                    torneos de
+                                    <span class="resaltarClave">Counter Strike</span>. Permite organizar <span
+                                        class="resaltarClave">equipos</span>,
+                                    registrar <span class="resaltarClave">partidas y resultados</span>, y mostrar <span
+                                        class="resaltarClave">clasificaciones en tiempo real</span>.
+                                    El objetivo es ofrecer una experiencia competitiva estructurada tanto para jugadores
+                                    como para espectadores.
+                                </p>
+                            </div>
+                            <div class="skills">
+                                <h1 class="tituloSkills">Skills</h1>
+                                <div class="skills-grid">
+                                    <img src="javascript.png" alt="JavaScript" title="JavaScript">
+                                    <img src="php.png" alt="PHP" title="PHP">
+                                    <img src="html.png" alt="HTML" title="HTML">
+                                    <img src="tailwindcss.png" alt="Tailwind CSS" title="Tailwind CSS">
+                                </div>
+                                <br><br><br><br>
+                                <div>
+                                    <p class="cv1">
+                                        <a href="https://github.com/beniatrobles/CSGO-League-WEB" class="cv"
+                                            id="cvCSWeb" target="_blank" rel="noopener noreferrer">Repositorio
+                                            Github</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
                 <!-----------------------SPOTIFREE -------------------->
                 <div class="proyectoSpotifree">
                     <div class="contenidoVisible">
@@ -295,7 +346,10 @@
                         </div>
                     </div>
                 </div>
+
+
             </div>
+
         </div>
     </div>
     <!-- --------------------------------------------------------------- -->
@@ -356,6 +410,9 @@
         const proyectoHelpVini = document.querySelector( '.proyectoHelpVini' );
         const hoverVini = document.querySelector( '.proyectoHelpViniHover' );
 
+        const proyectoCSWeb = document.querySelector( '.proyectoCSWeb' );
+        const hoverCS = document.querySelector( '.proyectoCSWebHover' );
+
         const proyectoSpotifree = document.querySelector( '.proyectoSpotifree' );
         const hoverSpotifree = document.getElementById( 'proyectoSpotifreeHover' );
 
@@ -367,6 +424,8 @@
         const modalBancario = document.querySelector( '.proyectoSistemaBancarioHover' );
         const cerrarBancario = document.getElementById( 'cerrarSistemaBancario' );
         const cvSistemaBancario = document.getElementById( 'cvSistemaBancario' );
+
+
 
 
         window.addEventListener( 'load', () =>
@@ -446,6 +505,7 @@
         // Abrir modales al hacer clic en los proyectos
         proyectoHelpVini.addEventListener( 'click', () => abrirModal( hoverVini ) );
         proyectoSpotifree.addEventListener( 'click', () => abrirModal( hoverSpotifree ) );
+        proyectoCSWeb.addEventListener( 'click', () => abrirModal( hoverCS ) );
 
 
 
@@ -460,6 +520,12 @@
         {
             e.preventDefault();
             cerrarModal( hoverSpotifree );
+        } );
+
+        document.getElementById( 'cerrarCSWeb' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            cerrarModal( hoverCS );
         } );
 
         document.getElementById( 'sobreMi' ).addEventListener( 'click', ( e ) =>
@@ -559,6 +625,24 @@
         } );
 
 
+        proyectoCSWeb.addEventListener( 'click', () =>
+        {
+            hoverVini.style.display = 'block';
+            paginaLibro.currentTime = 0;
+            paginaLibro.play();
+        } );
+
+        proyectoCSWeb.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
+        proyectoCSWeb.addEventListener( 'mouseleave', () =>
+        {
+            hoverSound.pause();
+            hoverSound.currentTime = 0;
+        } );
 
         proyectoSpotifree.addEventListener( 'mouseenter', () =>
         {
@@ -588,6 +672,14 @@
             cerrar.play();
         } );
 
+        document.getElementById( 'cerrarCSWeb' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            hoverVini.style.display = 'none';
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
         // Cerrar Spotifree
         document.getElementById( 'cerrarSpotifree' ).addEventListener( 'click', ( e ) =>
         {
@@ -609,6 +701,20 @@
             hoverSound.currentTime = 0;
             hoverSound.play();
         } );
+
+        const cvCSWeb = document.querySelector( '#cvCSWeb' );
+        cvCSWeb.addEventListener( 'click', () =>
+        {
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        cvCSWeb.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
 
         // Repositorio Spotifree
         const cvSpotifree = document.querySelector( '#cvSpotifree' );

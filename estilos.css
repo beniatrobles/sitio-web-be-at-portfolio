@@ -659,6 +659,23 @@ button:hover {
 
 }
 
+.proyectoCSWeb{
+     position: relative;
+    width: 350px;
+    background-color: #111;
+    border: 4px solid var(--bordes);
+    border-radius: 16px;
+    padding: 20px;
+    color: var(--texto);
+    box-shadow: 0 0 12px #000;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+
+}
+
 .proyectoHelpVini:hover {
     position: relative;
     width: 350px;
@@ -671,6 +688,22 @@ button:hover {
     overflow: hidden;
     transform: scale(1.05);
     cursor: pointer;
+}
+
+.proyectoCSWeb:hover{
+
+    position: relative;
+    width: 350px;
+    background-color: #111;
+    border: 4px solid gray;
+    border-radius: 16px;
+    padding: 20px;
+    color: var(--texto);
+    box-shadow: 0 0 12px #000;
+    overflow: hidden;
+    transform: scale(1.05);
+    cursor: pointer;
+
 }
 
 .proyectoHelpViniHover {
@@ -688,7 +721,33 @@ button:hover {
     border: 2px solid var(--bordes);
 }
 
+.proyectoCSWebHover{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: none;
+    background-color: #111;
+    width: 70%;
+    height: 80%;
+
+    border-radius: 20px;
+    border: 2px solid var(--bordes);
+
+}
+
 .proyectoHelpViniHover #cerrarHelpVini {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #eac784;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.proyectoCSWebHover #cerrarCSWeb{
     position: absolute;
     top: 10px;
     right: 15px;
@@ -706,7 +765,16 @@ button:hover {
     color: white;
 }
 
+.proyectoCSWebHover #cerrarCSWeb:hover{
+    color: white;
+}
+
 .helpviniVideo {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.CSWebVideo{
     width: 100%;
     border-radius: 8px;
 }
@@ -734,6 +802,10 @@ button:hover {
 
 .videoHoverVini {
     width: 500px;
+}
+
+.videoHoverCSWeb{
+     width: 500px;
 }
 
 .skills {
@@ -768,7 +840,7 @@ button:hover {
 
 .skills-grid img:hover {
     transform: scale(1.3);
-    /* efecto hover más sutil si quieres */
+    
 }
 
 .proyectoSpotifree {
@@ -833,7 +905,8 @@ button:hover {
 } */
 
 .descSpotifree,
-.descHelpVini {
+.descHelpVini,
+.descCSWeb {
     padding: 15px;
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
