@@ -61,7 +61,7 @@
                     <p class="textoAdvertencia">¡BAJO TU RESPONSABILIDAD!</p>
                 </div>
                 <div class="textoycont">
-                    <p class="presentacion">Kaixo!, soy <span class="resaltar">Beñat Robles</span>. Comencé mi
+                    <p class="presentacion">Soy <span class="resaltar">Beñat Robles</span>. Comencé mi
                         trayectoria en el ámbito tecnológico con un <span class="resaltar">Grado Superior en
                             Sistemas de Telecomunicaciones</span>, donde adquirí experiencia trabajando en el sector.
 
@@ -354,7 +354,7 @@
                 <div class="proyectoAs400JugadoresHover" id="as400JugadoresHover">
                     <a href="" id="cerrarAs400Jugadores">X</a>
                     <div class="contenidoHover">
-                        <h3 class="tituloProyecto">As400 Jugadores</h3>
+                        <h3 class="tituloProyecto">CRUD JUGADORES AS/400</h3>
                         <div class="contenido4">
                             <div class="descripcion">
                                 <video src="as400jugadores.mp4" autoplay loop muted
@@ -363,23 +363,26 @@
 
 
                                 <p class="descSistemaBancario">
-                                    Proyecto de <span class="resaltarClave">Sistema Bancario</span> en el que desarrollé
-                                    la <span class="resaltarClave"> gestión de cuentas, transacciones y seguridad de
-                                        usuarios,</span> Tambien podras <span class="resaltarClave"> ingresar y retirar
-                                        dinero</span> como en un cajero.
+                                    <span class="resaltarClave">AS400 Jugadores</span> es una aplicación tipo
+                                    <span class="resaltarClave">CRUD</span> que permite la
+                                    <span class="resaltarClave">creación, lectura, actualización y eliminación de
+                                        jugadores</span>
+                                    almacenados en un sistema AS400. 
+                                </p>
                             </div>
                             <div class="skills">
                                 <h1 class="tituloSkills">Skills</h1>
                                 <div class="skills-grid">
-                                    <img src="java.png" alt="Java" title="Java Swing">
-                                    <img src="mysql.png" alt="MySQL" title="MySQL">
+                                    <img src="as400.png" alt="As/400" title="As/400">
+                                    <img src="db2as400.png" alt="db2" title="DB2">
+                                    <img src="cobol.png" alt="db2" title="COBOL">
                                 </div>
                                 <br><br><br><br>
                                 <div>
                                     <p class="cv1">
-                                        <a href="https://github.com/beniatrobles/SISTEMABANCARIO" class="cv"
-                                            id="cvSistemaBancario" target="_blank" rel="noopener noreferrer">
-                                            Repositorio Github
+                                        <a href="https://www.youtube.com/watch?v=saywp6H32SE" class="cv"
+                                            id="cvAs400Jugadores" target="_blank" rel="noopener noreferrer">
+                                            Ver Video En Youtube
                                         </a>
                                     </p>
                                 </div>
@@ -468,6 +471,8 @@
         const cerrarBancario = document.getElementById( 'cerrarSistemaBancario' );
         const cvSistemaBancario = document.getElementById( 'cvSistemaBancario' );
 
+        const cvAs400Jug =  document.getElementById( 'cvAs400Jugadores' );
+        
 
 
 
@@ -569,6 +574,13 @@
         {
             e.preventDefault();
             cerrarModal( hoverCS );
+        } );
+
+        document.getElementById( 'cerrarAs400Jugadores' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            cerrarModal( hoverJugadores );
+            cerrar.play()
         } );
 
         document.getElementById( 'sobreMi' ).addEventListener( 'click', ( e ) =>
@@ -793,11 +805,12 @@
             hoverSound.currentTime = 0;
         } );
 
-        proyectoAs400Jugadores.addEventListener('click', () =>{
+        proyectoAs400Jugadores.addEventListener( 'click', () =>
+        {
             hoverJugadores.style.display = 'block';
             paginaLibro.currentTime = 0;
             paginaLibro.play();
-        })
+        } )
 
         proyectoAs400Jugadores.addEventListener( 'mouseenter', () =>
         {
@@ -834,6 +847,17 @@
             hoverSound.play();
         } );
 
+         cvAs400Jug.addEventListener( 'click', () =>
+        {
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        cvAs400Jug.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
 
 
         tarjetaBancario.addEventListener( 'click', () =>
