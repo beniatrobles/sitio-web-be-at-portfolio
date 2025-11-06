@@ -958,7 +958,7 @@ button:hover {
 }
 
 /* ===== MODAL HOVER ===== */
-.proyectoSistemaVentasHover {
+.proyectoSistemaVentasHover,.proyectoAs400JugadoresHover {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -983,7 +983,7 @@ button:hover {
 }
 
 /* Botón cerrar */
-.proyectoSistemaVentasHover #cerrarSistemaVentas {
+.proyectoSistemaVentasHover #cerrarSistemaVentas,.proyectoAs400JugadoresHover #cerrarAs400Jugadores {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -995,7 +995,7 @@ button:hover {
     transition: color 0.3s ease;
 }
 
-.proyectoSistemaVentasHover #cerrarSistemaVentas:hover {
+.proyectoSistemaVentasHover #cerrarSistemaVentas:hover ,.proyectoAs400JugadoresHover #cerrarAs400Jugadores:hover{
     color: white;
 }
 
@@ -1032,7 +1032,7 @@ button:hover {
 }
 
 
-.proyectoSistemaBancario {
+.proyectoSistemaBancario,.proyectoAs400Jugadores {
     position: relative;
     width: 350px;
     background-color: #111;
@@ -1046,7 +1046,7 @@ button:hover {
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.proyectoSistemaBancario:hover {
+.proyectoSistemaBancario:hover,.proyectoAs400Jugadores:hover {
     transform: scale(1.05);
     border-color: gray;
 }
