@@ -138,15 +138,19 @@
                                     <img src="php.png" alt="PHP" title="PHP">
                                     <img src="html.png" alt="HTML" title="HTML">
                                     <img src="tailwindcss.png" alt="Tailwind CSS" title="Tailwind CSS">
-                                    <img src="aws.png" alt="AWS" title="AWS">
-                                    <img src="docker.png" alt="Docker" title="Docker">
                                 </div>
-                                <br><br><br><br>
+                                <br>
                                 <div>
                                     <p class="cv1">
                                         <a href="https://github.com/beniatrobles/HelpViniEscaperoom" class="cv"
                                             id="cvhelpvini" target="_blank" rel="noopener noreferrer">Repositorio
                                             Github</a>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p class="cv1">
+                                        <a href="http://81.17.96.135:8080" class="cv" id="cvhelpvini1" target="_blank"
+                                            rel="noopener noreferrer">HELP VINI</a>
                                     </p>
                                 </div>
                             </div>
@@ -195,6 +199,14 @@
                                         <a href="https://github.com/beniatrobles/CSGO-League-WEB" class="cv"
                                             id="cvCSWeb" target="_blank" rel="noopener noreferrer">Repositorio
                                             Github</a>
+                                    </p>
+
+
+                                </div>
+                                <div>
+                                    <p class="cv1">
+                                        <a href="http://81.17.96.135/" class="cv" id="cvCSWeb1" target="_blank"
+                                            rel="noopener noreferrer">CS WEB</a>
                                     </p>
                                 </div>
                             </div>
@@ -367,7 +379,7 @@
                                     <span class="resaltarClave">CRUD</span> que permite la
                                     <span class="resaltarClave">creación, lectura, actualización y eliminación de
                                         jugadores</span>
-                                    almacenados en un sistema AS400. 
+                                    almacenados en un sistema AS400.
                                 </p>
                             </div>
                             <div class="skills">
@@ -471,8 +483,8 @@
         const cerrarBancario = document.getElementById( 'cerrarSistemaBancario' );
         const cvSistemaBancario = document.getElementById( 'cvSistemaBancario' );
 
-        const cvAs400Jug =  document.getElementById( 'cvAs400Jugadores' );
-        
+        const cvAs400Jug = document.getElementById( 'cvAs400Jugadores' );
+
 
 
 
@@ -745,7 +757,14 @@
         } );
 
         const cvHelpVini = document.querySelector( '#cvhelpvini' );
+        const cvHelpVini1 = document.querySelector( '#cvhelpvini1' );
         cvHelpVini.addEventListener( 'click', () =>
+        {
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        cvHelpVini1.addEventListener( 'click', () =>
         {
             cerrar.currentTime = 0;
             cerrar.play();
@@ -757,14 +776,33 @@
             hoverSound.play();
         } );
 
+         cvHelpVini1.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
         const cvCSWeb = document.querySelector( '#cvCSWeb' );
+        const cvCSWeb1 = document.querySelector( '#cvCSWeb1' );
         cvCSWeb.addEventListener( 'click', () =>
         {
             cerrar.currentTime = 0;
             cerrar.play();
         } );
 
+         cvCSWeb1.addEventListener( 'click', () =>
+        {
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
         cvCSWeb.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
+         cvCSWeb1.addEventListener( 'mouseenter', () =>
         {
             hoverSound.currentTime = 0;
             hoverSound.play();
@@ -847,7 +885,7 @@
             hoverSound.play();
         } );
 
-         cvAs400Jug.addEventListener( 'click', () =>
+        cvAs400Jug.addEventListener( 'click', () =>
         {
             cerrar.currentTime = 0;
             cerrar.play();
