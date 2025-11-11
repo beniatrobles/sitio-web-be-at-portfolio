@@ -403,6 +403,14 @@
                     </div>
                 </div> -->
 
+                <!----------------------- AS400 PERSONAS -------------------->
+                <div class="proyectoAs400Personas">
+                    <div class="marcoPixel">
+                        <video src="as400personas.mp4" autoplay loop muted class="sistemaVentasVideo"></video>
+                    </div>
+                    <h3 class="tituloProyecto">LISTADO PERSONAS AS/400</h3>
+                </div>
+
             </div>
 
         </div>
@@ -647,6 +655,44 @@
             </div>
         </div>
     </div>
+
+    <div class="proyectoAs400PersonasHover" id="as400PersonasHover">
+        <a href="" id="cerrarAs400Personas">X</a>
+        <div class="contenidoHover">
+            <h3 class="tituloProyecto">LISTADO PERSONAS AS/400</h3>
+            <div class="contenido4">
+                <div class="descripcion">
+                    <video src="as400personas.mp4" autoplay loop muted class="videoHoverSistemaVentas"></video>
+
+
+
+                    <p class="descSistemaBancario">
+                        <span class="resaltarClave">AS400 Personas</span> es una aplicación que muestra un
+                        <span class="resaltarClave">listado de personas</span> almacenadas en el sistema AS400,
+                        permitiendo <span class="resaltarClave">filtrar por nombre</span> y
+                        <span class="resaltarClave">consultar los detalles de una persona específica</span>.
+                    </p>
+                </div>
+                <div class="skills">
+                    <h1 class="tituloSkills">Skills</h1>
+                    <div class="skills-grid">
+                        <img src="as400.png" alt="As/400" title="As/400">
+                        <img src="db2as400.png" alt="db2" title="DB2">
+                        <img src="cobol.png" alt="db2" title="COBOL">
+                    </div>
+                    <br><br><br><br>
+                    <div>
+                        <p class="cv1">
+                            <a href="https://youtu.be/tL0lzn8EnVU" class="cv" id="cvAs400Personas"
+                                target="_blank" rel="noopener noreferrer">
+                                Ver Video En Youtube
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- --------------------------------------------------------------- -->
 
     <!----------------------- CONTENEDOR CONTACTAME -------------------->
@@ -717,6 +763,9 @@
         const proyectoAs400Jugadores = document.querySelector( '.proyectoAs400Jugadores' )
         const hoverJugadores = document.querySelector( '.proyectoAs400JugadoresHover' )
 
+        const proyectoAs400Personas = document.querySelector( '.proyectoAs400Personas' )
+        const hoverPersonas = document.querySelector( '.proyectoAs400PersonasHover' )
+
 
         const tarjetaBancario = document.querySelector( '.proyectoSistemaBancario' );
         const modalBancario = document.querySelector( '.proyectoSistemaBancarioHover' );
@@ -724,6 +773,10 @@
         const cvSistemaBancario = document.getElementById( 'cvSistemaBancario' );
 
         const cvAs400Jug = document.getElementById( 'cvAs400Jugadores' );
+
+        const cvAs400Per = document.getElementById( 'cvAs400Personas' );
+
+        
 
 
 
@@ -832,6 +885,13 @@
         {
             e.preventDefault();
             cerrarModal( hoverJugadores );
+            cerrar.play()
+        } );
+
+        document.getElementById( 'cerrarAs400Personas' ).addEventListener( 'click', ( e ) =>
+        {
+            e.preventDefault();
+            cerrarModal( hoverPersonas );
             cerrar.play()
         } );
 
@@ -1102,6 +1162,25 @@
             hoverSound.currentTime = 0;
         } )
 
+        proyectoAs400Personas.addEventListener( 'click', () =>
+        {
+            hoverPersonas.style.display = 'block';
+            paginaLibro.currentTime = 0;
+            paginaLibro.play();
+        } )
+
+        proyectoAs400Personas.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } )
+
+        proyectoAs400Personas.addEventListener( 'mouseleave', () =>
+        {
+            hoverSound.pause();
+            hoverSound.currentTime = 0;
+        } )
+
         // Cerrar modal SistemaVentas
         document.getElementById( 'cerrarSistemaVentas' ).addEventListener( 'click', ( e ) =>
         {
@@ -1132,6 +1211,18 @@
         } );
 
         cvAs400Jug.addEventListener( 'mouseenter', () =>
+        {
+            hoverSound.currentTime = 0;
+            hoverSound.play();
+        } );
+
+        cvAs400Per.addEventListener( 'click', () =>
+        {
+            cerrar.currentTime = 0;
+            cerrar.play();
+        } );
+
+        cvAs400Per.addEventListener( 'mouseenter', () =>
         {
             hoverSound.currentTime = 0;
             hoverSound.play();

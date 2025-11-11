@@ -958,7 +958,7 @@ button:hover {
 }
 
 /* ===== MODAL HOVER ===== */
-.proyectoSistemaVentasHover,.proyectoAs400JugadoresHover {
+.proyectoSistemaVentasHover,.proyectoAs400JugadoresHover,.proyectoAs400PersonasHover {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -983,7 +983,7 @@ button:hover {
 }
 
 /* Botón cerrar */
-.proyectoSistemaVentasHover #cerrarSistemaVentas,.proyectoAs400JugadoresHover #cerrarAs400Jugadores {
+.proyectoSistemaVentasHover #cerrarSistemaVentas,.proyectoAs400JugadoresHover #cerrarAs400Jugadores,.proyectoAs400PersonasHover #cerrarAs400Personas {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -1032,7 +1032,7 @@ button:hover {
 }
 
 
-.proyectoSistemaBancario,.proyectoAs400Jugadores {
+.proyectoSistemaBancario,.proyectoAs400Jugadores,.proyectoAs400Personas {
     position: relative;
     width: 350px;
     background-color: #111;
@@ -1046,7 +1046,7 @@ button:hover {
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.proyectoSistemaBancario:hover,.proyectoAs400Jugadores:hover {
+.proyectoSistemaBancario:hover,.proyectoAs400Jugadores:hover,.proyectoAs400Personas:hover {
     transform: scale(1.05);
     border-color: gray;
 }
