@@ -185,7 +185,7 @@ body {
   }
 
   .display button {
-    width: 80%;
+    width: 70%;
   }
 
   #magoGif {
@@ -211,4 +211,6 @@ body {
   .display {
     gap: 0.8rem;
   }
+
+  
 }
