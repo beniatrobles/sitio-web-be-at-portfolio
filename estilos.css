@@ -26,30 +26,6 @@ body {
     overflow: hidden;
 }
 
-.index {
-    display: flex;
-    flex-direction: column;
-}
-
-.responsive {
-    color: #e2a22a;
-    text-align: center;
-}
-
-.screen {
-    background-color: rgba(0, 0, 0, 0.6);
-    padding: 40px;
-    border: 4px solid var(--bordes);
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 0 12px #000;
-    font-size: 60px;
-}
-
-.f11 {
-    color: var(--f11);
-    font: bold;
-}
 
 .inicio {
     opacity: 0;
@@ -120,21 +96,7 @@ body {
     font-size: 50px;
 }
 
-.mute {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 10;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 8px;
-    color: var(--texto);
-    font-size: 12px;
-    font-family: 'Press Start 2P', monospace;
-}
+
 
 .realizado {
     position: fixed;
@@ -155,81 +117,7 @@ body {
 
 }
 
-.mute p {
-    margin: 0;
-}
 
-.mute button {
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.mute button img.altavoz {
-    display: block;
-    width: 40px;
-    height: auto;
-    transition: transform 0.2s ease;
-}
-
-.altavoz {
-    cursor: pointer;
-}
-
-
-h1 {
-    font-size: 16px;
-    margin-bottom: 20px;
-    color: var(--texto);
-    text-shadow: 0 0 5px #000;
-}
-
-p {
-    font-size: 10px;
-    margin-bottom: 30px;
-    color: #dbc58c;
-    text-shadow: 0 0 3px #000;
-}
-
-#iniciarBtn {
-    padding: 12px 24px;
-    background-color: var(--boton-bg);
-    color: var(--texto);
-    border: 2px solid var(--bordes);
-    font-family: 'Press Start 2P', monospace;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background 0.3s, transform 0.2s;
-}
-
-#iniciarBtn:hover {
-    background-color: var(--boton-hover);
-    transform: scale(1.05);
-}
-
-h1,
-p,
-#iniciarBtn,
-.responsive {
-    opacity: 0;
-    animation: aparecer 1s forwards;
-}
-
-h1 {
-    animation-delay: 0s;
-}
-
-p {
-    animation-delay: 1.2s;
-}
-
-#iniciarBtn {
-    animation-delay: 2.4s;
-}
-
-.responsive {
-    animation-delay: 3s;
-}
 
 @keyframes aparecer {
     0% {
@@ -271,6 +159,51 @@ p {
         transform: scale(1);
     }
 }
+
+
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+  .cuadro a, .minijuego a {
+    font-size: 0.8rem;
+    padding: 0.7rem 1.2rem;
+  }
+
+  .valientes {
+    font-size: 1rem;
+  }
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  body {
+    font-size: 10px;
+  }
+
+  .cuadro {
+    gap: 0.8rem;
+  }
+
+  .cuadro a, .minijuego a {
+    width: 80%;
+    font-size: 0.75rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .mundo {
+    font-size: clamp(1.2rem, 6vw, 2rem);
+  }
+
+  .valientes {
+    font-size: 0.9rem;
+  }
+
+  .realizado {
+    bottom: 5px;
+    font-size: 0.5rem;
+  }
+}
+
 
 
 .sobremi {
@@ -659,8 +592,8 @@ button:hover {
 
 }
 
-.proyectoCSWeb{
-     position: relative;
+.proyectoCSWeb {
+    position: relative;
     width: 350px;
     background-color: #111;
     border: 4px solid var(--bordes);
@@ -690,7 +623,7 @@ button:hover {
     cursor: pointer;
 }
 
-.proyectoCSWeb:hover{
+.proyectoCSWeb:hover {
 
     position: relative;
     width: 350px;
@@ -721,7 +654,7 @@ button:hover {
     border: 2px solid var(--bordes);
 }
 
-.proyectoCSWebHover{
+.proyectoCSWebHover {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -747,7 +680,7 @@ button:hover {
     font-size: 30px;
 }
 
-.proyectoCSWebHover #cerrarCSWeb{
+.proyectoCSWebHover #cerrarCSWeb {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -765,7 +698,7 @@ button:hover {
     color: white;
 }
 
-.proyectoCSWebHover #cerrarCSWeb:hover{
+.proyectoCSWebHover #cerrarCSWeb:hover {
     color: white;
 }
 
@@ -774,7 +707,7 @@ button:hover {
     border-radius: 8px;
 }
 
-.CSWebVideo{
+.CSWebVideo {
     width: 100%;
     border-radius: 8px;
 }
@@ -804,8 +737,8 @@ button:hover {
     width: 500px;
 }
 
-.videoHoverCSWeb{
-     width: 500px;
+.videoHoverCSWeb {
+    width: 500px;
 }
 
 .skills {
@@ -840,7 +773,7 @@ button:hover {
 
 .skills-grid img:hover {
     transform: scale(1.3);
-    
+
 }
 
 .proyectoSpotifree {
@@ -958,7 +891,9 @@ button:hover {
 }
 
 /* ===== MODAL HOVER ===== */
-.proyectoSistemaVentasHover,.proyectoAs400JugadoresHover,.proyectoAs400PersonasHover {
+.proyectoSistemaVentasHover,
+.proyectoAs400JugadoresHover,
+.proyectoAs400PersonasHover {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -983,7 +918,9 @@ button:hover {
 }
 
 /* Botón cerrar */
-.proyectoSistemaVentasHover #cerrarSistemaVentas,.proyectoAs400JugadoresHover #cerrarAs400Jugadores,.proyectoAs400PersonasHover #cerrarAs400Personas {
+.proyectoSistemaVentasHover #cerrarSistemaVentas,
+.proyectoAs400JugadoresHover #cerrarAs400Jugadores,
+.proyectoAs400PersonasHover #cerrarAs400Personas {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -995,7 +932,8 @@ button:hover {
     transition: color 0.3s ease;
 }
 
-.proyectoSistemaVentasHover #cerrarSistemaVentas:hover ,.proyectoAs400JugadoresHover #cerrarAs400Jugadores:hover{
+.proyectoSistemaVentasHover #cerrarSistemaVentas:hover,
+.proyectoAs400JugadoresHover #cerrarAs400Jugadores:hover {
     color: white;
 }
 
@@ -1032,7 +970,9 @@ button:hover {
 }
 
 
-.proyectoSistemaBancario,.proyectoAs400Jugadores,.proyectoAs400Personas {
+.proyectoSistemaBancario,
+.proyectoAs400Jugadores,
+.proyectoAs400Personas {
     position: relative;
     width: 350px;
     background-color: #111;
@@ -1046,7 +986,9 @@ button:hover {
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.proyectoSistemaBancario:hover,.proyectoAs400Jugadores:hover,.proyectoAs400Personas:hover {
+.proyectoSistemaBancario:hover,
+.proyectoAs400Jugadores:hover,
+.proyectoAs400Personas:hover {
     transform: scale(1.05);
     border-color: gray;
 }
