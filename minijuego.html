@@ -11,41 +11,36 @@
 </head>
 
 <body>
-    <div id="background">
-        <div id="pantalla">
-            <div class="contenedorJuego">
-                <h1 style="color: white;">AHORCADO</h1>
-                <br><br>
-                <img src="trueno.gif" alt="Mago animado" id="magoGif">
-                <div>
-                    <canvas id="canvas"></canvas>
-                    <div id="letrasUsadas"></div>
-                </div>
-                <br><br><br>
-                <div id="contenedorPalabra"></div>
-                <br>
-                <button id="start">START</button>
-            </div>
-        </div>
-    </div>
 
+     <div class="contenedorJuego">
+    <h1 class="titulo">AHORCADO</h1>
+
+    <img src="trueno.gif" alt="Mago animado" id="magoGif">
+
+    <div class="juego">
+      <canvas id="canvas"></canvas>
+      <div id="letrasUsadas"></div>
+      <div id="contenedorPalabra"></div>
+    </div>
+  </div>
+
+  <div class="display">
+    <button id="volverBtn">Volver</button>
+    <button id="start">START</button>
     <div class="mute">
-        <p>Mutear la cancion</p>
-        <button id="quitarMusica"><img src="altavoz.png" alt="" class="altavoz"></button>
+      <p class="muteTexto">Mutear la canción</p>
+      <button id="quitarMusica"><img src="altavoz.png" alt="Altavoz" class="altavoz"></button>
     </div>
+  </div>
 
-    <div>
-        <button id="volverBtn">Volver</button>
-    </div>
-    </div>
+  <!-- Audios -->
+  <audio id="musica" loop>
+    <source src="cancionminijuego.mp3" type="audio/mp3" />
+    Tu navegador no soporta el elemento de audio.
+  </audio>
 
-    <audio id="musica" loop>
-        <source src="cancionminijuego.mp3" type="audio/mp3" />
-        Tu navegador no soporta el elemento de audio.
-    </audio>
-
-    <audio id="hoverSound" src="001_Hover_01.wav"></audio>
-    <audio id="tecla" src="tecla.mp3"></audio>
+  <audio id="hoverSound" src="001_Hover_01.wav"></audio>
+  <audio id="tecla" src="tecla.mp3"></audio>
 
     <script>
         document.addEventListener( "DOMContentLoaded", () =>
