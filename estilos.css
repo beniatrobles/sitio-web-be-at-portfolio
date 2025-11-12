@@ -508,11 +508,16 @@ button:hover {
 }
 
 .cargando {
-    font-size: 60px;
     font-family: 'Press Start 2P', cursive;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap; /* permite que se ajuste si no cabe en pantalla */
     gap: 10px;
+    text-align: center;
+    color: #eac784;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: clamp(16px, 6vw, 60px); /* 👈 ajusta tamaño automáticamente */
 }
 
 .cargando span {
@@ -520,49 +525,38 @@ button:hover {
     animation: ola 1.5s ease-in-out infinite;
 }
 
-.cargando span:nth-child(1) {
-    animation-delay: 0s;
+/* Escalonamos el efecto */
+.cargando span:nth-child(1) { animation-delay: 0s; }
+.cargando span:nth-child(2) { animation-delay: 0.1s; }
+.cargando span:nth-child(3) { animation-delay: 0.2s; }
+.cargando span:nth-child(4) { animation-delay: 0.3s; }
+.cargando span:nth-child(5) { animation-delay: 0.4s; }
+.cargando span:nth-child(6) { animation-delay: 0.5s; }
+.cargando span:nth-child(7) { animation-delay: 0.6s; }
+.cargando span:nth-child(8) { animation-delay: 0.7s; }
+.cargando span:nth-child(9) { animation-delay: 0.8s; }
+.cargando span:nth-child(10) { animation-delay: 0.9s; }
+.cargando span:nth-child(11) { animation-delay: 1s; }
+
+
+@keyframes ola {
+    0%, 100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    50% {
+        transform: translateY(-15px);
+        opacity: 0.7;
+    }
 }
 
-.cargando span:nth-child(2) {
-    animation-delay: 0.1s;
+@media (max-width: 600px) {
+    .cargando {
+        gap: 6px;
+        font-size: clamp(12px, 8vw, 30px);
+    }
 }
 
-.cargando span:nth-child(3) {
-    animation-delay: 0.2s;
-}
-
-.cargando span:nth-child(4) {
-    animation-delay: 0.3s;
-}
-
-.cargando span:nth-child(5) {
-    animation-delay: 0.4s;
-}
-
-.cargando span:nth-child(6) {
-    animation-delay: 0.5s;
-}
-
-.cargando span:nth-child(7) {
-    animation-delay: 0.6s;
-}
-
-.cargando span:nth-child(8) {
-    animation-delay: 0.7s;
-}
-
-.cargando span:nth-child(9) {
-    animation-delay: 0.8s;
-}
-
-.cargando span:nth-child(10) {
-    animation-delay: 0.9s;
-}
-
-.cargando span:nth-child(11) {
-    animation-delay: 1s;
-}
 
 .textoClicka {
     text-align: center;
