@@ -550,12 +550,11 @@ body {
 @media (min-width: 1381px) and (max-width: 1951px) {
   /* Contenedor adaptado */
   .sobremi {
-    transform: translate(-50%, -50%);
     width: 80%;
     height: 75%;
     padding: 40px;
     border-radius: 10px;
-    overflow: hidden; /* no scroll necesario si el contenido se ajusta */
+    overflow: hidden; 
     box-sizing: border-box;
   }
 
@@ -633,7 +632,7 @@ body {
 
 
 
-@media (max-width: 1037px) {
+@media (max-width: 1024px) {
   
   .sobremi {
     width: 95%;
