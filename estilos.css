@@ -547,6 +547,92 @@ body {
   }
 }
 
+@media (min-width: 1381px) and (max-width: 1951px) {
+  /* Contenedor adaptado */
+  .sobremi {
+    transform: translate(-50%, -50%);
+    width: 80%;
+    height: 75%;
+    padding: 40px;
+    border-radius: 10px;
+    overflow: hidden; /* no scroll necesario si el contenido se ajusta */
+    box-sizing: border-box;
+  }
+
+  .contenido {
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Contenido en dos columnas */
+  .contenido1 {
+    display: flex;
+    flex-direction: row; /* dos columnas */
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+  }
+
+  /* Columna de imagen */
+  .cuadroAdvertencia {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Imagen */
+  .imgSobreMi,
+  #imgTerror {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  /* Columna de texto y botones */
+  .textoycont {
+    width: 55%;
+  }
+
+  .textoAdvertencia {
+    font-size: 1rem;
+  }
+
+  .presentacion {
+    font-size: 1.1rem;
+    line-height: 1.7;
+  }
+
+  .resaltar {
+    font-size: 1.4rem;
+  }
+
+  .contactos {
+    flex-direction: row; /* botones uno al lado del otro */
+    justify-content: flex-start;
+    gap: 20px;
+    margin-top: 15px;
+  }
+
+  .cv {
+    padding: 18px 35px;
+    font-size: 1rem;
+  }
+
+  .iconosContactos img {
+    width: 50px;
+  }
+
+  /* Botón cerrar */
+  #cerrarSobreMi {
+    font-size: 30px;
+    top: 15px;
+    right: 20px;
+  }
+}
+
+
+
 @media (max-width: 1037px) {
   
   .sobremi {
