@@ -43,7 +43,6 @@ body {
     justify-content: center;
     text-align: center;
     color: #eac784;
-
 }
 
 .cuadro a {
@@ -53,13 +52,13 @@ body {
     padding: 10px 20px;
     border-radius: 6px;
     display: inline-block;
-    transition: background-color 0.3s;
+    transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .cuadro a:hover {
     transform: scale(1.1);
     color: rgb(180, 172, 172);
-    border: 2px solid rgb(180, 172, 172);
+    border-color: rgb(180, 172, 172);
 }
 
 .minijuego {
@@ -77,13 +76,13 @@ body {
     padding: 10px 20px;
     border-radius: 6px;
     display: inline-block;
-    transition: background-color 0.3s;
+    transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .minijuego a:hover {
     transform: scale(1.1);
     color: rgb(180, 172, 172);
-    border: 2px solid rgb(180, 172, 172);
+    border-color: rgb(180, 172, 172);
 }
 
 .valientes {
@@ -91,13 +90,11 @@ body {
     font-size: 20px;
 }
 
-
 .mundo {
     color: var(--texto);
-    font-size: 50px;
+    font-size: clamp(2rem, 5vw, 3.5rem); /* Se adapta automáticamente */
+    text-align: center;
 }
-
-
 
 .realizado {
     position: fixed;
@@ -105,9 +102,8 @@ body {
     left: 20px;
     color: var(--texto);
     font-family: 'Press Start 2P', monospace;
-    font-size: 10px;
+    font-size: clamp(0.5rem, 1vw, 1rem);
     z-index: 10;
-
     opacity: 0;
     transition: opacity 1s ease-in-out;
 }
@@ -115,71 +111,33 @@ body {
 .realizado.visible {
     opacity: 1;
     animation: pulso-una-vez 2s ease-out forwards;
-
 }
 
-
-
+/* Animaciones */
 @keyframes aparecer {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes entrarDesdeArriba {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes pulso-una-vez {
-    0% {
-        transform: scale(1);
-        text-shadow: none;
-    }
-
-    50% {
-        transform: scale(1.05);
-    }
-
-    100% {
-        transform: scale(1);
-    }
+    0% { transform: scale(1); text-shadow: none; }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
 }
 
 @keyframes aparecerContenedor {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+    to { opacity: 1; transform: scale(1); }
 }
 
-
-/* RESPONSIVE */
-
-@media (max-width: 768px) {
-  .cuadro a, .minijuego a {
-    font-size: 0.8rem;
-    padding: 0.7rem 1.2rem;
-  }
-
-  .valientes {
-    font-size: 1rem;
-  }
-}
-
-/* Móvil */
+/* ============================= */
+/* 📱 MÓVILES (hasta 480px) */
+/* ============================= */
 @media (max-width: 480px) {
-  body {
-    font-size: 10px;
-  }
+  body { font-size: 10px; }
 
   .cuadro {
     gap: 0.8rem;
@@ -205,23 +163,71 @@ body {
   }
 }
 
+/* ============================= */
+/* 💻 TABLETAS Y PORTÁTILES PEQUEÑOS (481–1024px) */
+/* ============================= */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .cuadro a, .minijuego a {
+    font-size: 1rem;
+    padding: 0.8rem 1.5rem;
+  }
 
+  .mundo {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
 
-.sobremi {
-    position: fixed;
-    display: none;
-    background-color: #1a0e0e;
-    padding: 40px;
-    border: 2px solid var(--bordes);
-    border-radius: 8px;
-    width: 80%;
-    height: 65%;
-    z-index: 20;
-    opacity: 0;
-    transform: scale(0.2);
-    animation: aparecerContenedor 0.8s ease-out forwards;
-    animation-delay: 0.5s;
+  .valientes {
+    font-size: 1.2rem;
+  }
+
+  .realizado {
+    font-size: 0.7rem;
+  }
 }
+
+/* ============================= */
+/* 🖥️ PANTALLAS GRANDES (1080p) */
+/* ============================= */
+@media (min-width: 1025px) and (max-width: 1920px) {
+  .mundo {
+    font-size: clamp(2.5rem, 4vw, 4rem);
+  }
+
+  .cuadro a, .minijuego a {
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+  }
+
+  .valientes {
+    font-size: 1.4rem;
+  }
+}
+
+/* ============================= */
+/* 🧠 PANTALLAS ULTRA GRANDES (2K–4K) */
+/* ============================= */
+@media (min-width: 1921px) {
+  .mundo {
+    font-size: clamp(3rem, 3vw, 5rem);
+  }
+
+  .cuadro a, .minijuego a {
+    font-size: 1.5rem;
+    padding: 1.2rem 2.5rem;
+  }
+
+  .valientes {
+    font-size: 1.6rem;
+  }
+
+  .realizado {
+    font-size: 1rem;
+    bottom: 40px;
+  }
+}
+
+
+
 
 .proyectos {
     position: fixed;
@@ -284,11 +290,7 @@ body {
     animation-delay: 0.5s;
 }
 
-.sobremi .contenido {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
+
 
 .proyectos .contenido {
     position: relative;
@@ -302,15 +304,7 @@ body {
     height: 100%;
 }
 
-.sobremi #cerrarSobreMi {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    cursor: pointer;
-    color: #eac784;
-    text-decoration: none;
-    font-size: 30px;
-}
+
 
 .proyectos #cerrarProyectos {
     position: absolute;
@@ -322,9 +316,7 @@ body {
     font-size: 30px;
 }
 
-.sobremi #cerrarSobreMi:hover {
-    color: #fff;
-}
+
 
 .proyectos #cerrarProyectos:hover {
     color: #fff;
@@ -344,10 +336,7 @@ body {
     color: #fff;
 }
 
-.textoSobreMi {
-    text-align: center;
-    font-size: 40px;
-}
+
 
 .textoProyectos {
     text-align: center;
@@ -364,6 +353,54 @@ body {
         opacity: 1;
         transform: scale(1);
     }
+}
+
+
+.sobremi {
+    position: fixed;
+    display: none;
+    background-color: #1a0e0e;
+    padding: 40px;
+    border: 2px solid var(--bordes);
+    border-radius: 8px;
+    width: 80%;
+    height: 65%;
+    z-index: 20;
+    opacity: 0;
+    transform: scale(0.2);
+    animation: aparecerContenedor 0.8s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.sobremi .contenido {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+
+.sobremi #cerrarSobreMi {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    cursor: pointer;
+    color: #eac784;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+
+.sobremi #cerrarSobreMi:hover {
+    color: #fff;
+}
+
+.textoSobreMi {
+    text-align: center;
+    font-size: 40px;
+}
+
+.sobremi #cerrarSobreMi:hover {
+    color: #fff;
 }
 
 .imgSobreMi {
@@ -511,13 +548,13 @@ button:hover {
     font-family: 'Press Start 2P', cursive;
     display: flex;
     justify-content: center;
-    flex-wrap: wrap; /* permite que se ajuste si no cabe en pantalla */
+    flex-wrap: wrap; 
     gap: 10px;
     text-align: center;
     color: #eac784;
     margin: 0 auto;
     padding: 20px;
-    font-size: clamp(16px, 6vw, 60px); /* 👈 ajusta tamaño automáticamente */
+    font-size: clamp(16px, 6vw, 60px); 
 }
 
 .cargando span {

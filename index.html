@@ -550,7 +550,7 @@
             fondo.style.imageRendering = 'pixelated';
             fondo.style.opacity = '0';
             fondo.style.zIndex = '-1';
-            fondo.style.transition = 'opacity 2s ease-in-out';
+            fondo.style.transition = 'opacity 1s ease-in-out';
             document.body.appendChild( fondo );
 
             requestAnimationFrame( () =>
@@ -562,13 +562,13 @@
 
             setTimeout( () =>
             {
-                screen.style.animation = 'entrarDesdeArriba 4s ease-out forwards';
+                screen.style.animation = 'entrarDesdeArriba 1.75s ease-out forwards';
                 setTimeout( () =>
                 {
                     const realizado = document.querySelector( '.realizado' );
                     realizado.classList.add( 'visible' );
-                }, 4200 );
-            }, 2000 );
+                }, 1500 );
+            }, 1500 );
         } );
 
         links.forEach( link =>
