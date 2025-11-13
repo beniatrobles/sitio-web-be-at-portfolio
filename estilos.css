@@ -1047,7 +1047,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    overflow-y: auto;
     display: none;
     background-color: #111;
     width: 70%;
@@ -1062,7 +1062,7 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-
+    overflow-y: auto;
     display: none;
     background-color: #111;
     width: 70%;
@@ -1095,6 +1095,7 @@ button:hover {
 
 .contenidoHover {
     margin: 5%;
+    overflow-y: auto;
 }
 
 .proyectoHelpViniHover #cerrarHelpVini:hover {
@@ -1122,10 +1123,7 @@ button:hover {
     text-align: center;
 }
 
-/* .descHelpVini{
-    font-size: 15px;
-    color: #c9a66b;
-} */
+
 
 .contenido4 {
     display: flex;
@@ -1205,6 +1203,7 @@ button:hover {
     transform: translate(-50%, -50%);
     display: none;
     background-color: #111;
+    overflow-y: auto;
     width: 70%;
     height: 80%;
     border-radius: 20px;
@@ -1235,14 +1234,13 @@ button:hover {
     width: 500px;
 }
 
-/* .descSpotifree {
-    font-size: 15px;
-    color: #c9a66b;
-} */
+
 
 .descSpotifree,
 .descHelpVini,
-.descCSWeb {
+.descCSWeb,
+.descSistemaVentas,
+.descSistemaBancario {
     padding: 15px;
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
@@ -1251,8 +1249,6 @@ button:hover {
     text-shadow: 1px 1px 0 #000;
     max-width: 600px;
     margin: 10px auto;
-    opacity: 0;
-    transform: translateY(20px);
     transition: all 0.6s ease-out;
 }
 
@@ -1303,6 +1299,7 @@ button:hover {
     transform: translate(-50%, -50%);
     display: none;
     background-color: #111;
+    overflow-y: auto;
     width: 70%;
     height: 80%;
     border-radius: 20px;
@@ -1351,26 +1348,10 @@ button:hover {
     border-radius: 8px;
 }
 
-/* ===== DESCRIPCIÓN ===== */
-.descSistemaVentas {
-    padding: 15px;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 14px;
-    color: var(--texto);
-    line-height: 1.6em;
-    text-shadow: 1px 1px 0 #000;
-    max-width: 600px;
-    margin: 10px auto;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.6s ease-out;
-}
 
-/* Animación al mostrar */
-.proyectoSistemaVentasHover.active .descSistemaVentas {
-    opacity: 1;
-    transform: translateY(0);
-}
+
+
+
 
 
 .proyectoSistemaBancario,
@@ -1404,6 +1385,7 @@ button:hover {
     transform: translate(-50%, -50%);
     display: none;
     background-color: #111;
+    overflow-y: auto;
     width: 70%;
     height: 80%;
     border-radius: 20px;
@@ -1450,7 +1432,8 @@ button:hover {
 }
 
 /* ===== DESCRIPCIÓN ===== */
-.descSistemaBancario {
+.descSistemaBancario,
+.descHelpVini {
     padding: 15px;
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
@@ -1459,120 +1442,125 @@ button:hover {
     text-shadow: 1px 1px 0 #000;
     max-width: 600px;
     margin: 10px auto;
-    opacity: 0;
-    transform: translateY(20px);
     transition: all 0.6s ease-out;
 }
 
-/* Animación al mostrar */
-.proyectoSistemaBancarioHover.active .descSistemaBancario {
-    opacity: 1;
-    transform: translateY(0);
-}
+
 
 @media (max-width: 490px) {
 
-    .proyectosContainer{
+    .proyectosContainer {
         display: flex;
         flex-direction: column;
     }
 
-    .proyectoCSWeb{
-        width: 300px;
-        margin: 0;
-
-    }
-    .proyectoSpotifree{
-        width: 300px;
-        margin: 0;
-
-    }
-    .proyectoSistemaVentas{
-        width: 300px;
-        margin: 0;
-
-    }
-    .proyectoSistemaBancario{
-        width: 300px;
-        margin: 0;
-
-    }
-    .proyectoAs400Jugadores{
-        width: 300px;
-        margin: 0;
-
-    }
-    .proyectoAs400Personas{
-        width: 300px;
-        margin: 0;
-
-    }
-    .proyectoHelpVini{
+    .proyectoCSWeb {
         width: 300px;
         margin: 0;
 
     }
 
-    
+    .proyectoSpotifree {
+        width: 300px;
+        margin: 0;
+
+    }
+
+    .proyectoSistemaVentas {
+        width: 300px;
+        margin: 0;
+
+    }
+
+    .proyectoSistemaBancario {
+        width: 300px;
+        margin: 0;
+
+    }
+
+    .proyectoAs400Jugadores {
+        width: 300px;
+        margin: 0;
+
+    }
+
+    .proyectoAs400Personas {
+        width: 300px;
+        margin: 0;
+
+    }
+
+    .proyectoHelpVini {
+        width: 300px;
+        margin: 0;
+
+    }
+
+
 
 }
 
 @media (max-width: 440px) {
 
-    .textoProyectos{
+    .textoProyectos {
         font-size: 12px;
     }
 
-    .textoClicka{
+    .textoClicka {
         font-size: 8px;
     }
 
-    
 
-    .proyectosContainer{
+
+    .proyectosContainer {
         display: flex;
         flex-direction: column;
     }
 
 
-    .proyectoHelpVini{
+    .proyectoHelpVini {
         width: 250px;
         margin: 0;
 
     }
 
-    .proyectoCSWeb{
-        width: 250px;
-        margin: 0;
-
-    }
-    .proyectoSpotifree{
-        width: 250px;
-        margin: 0;
-
-    }
-    .proyectoSistemaVentas{
-        width: 250px;
-        margin: 0;
-
-    }
-    .proyectoSistemaBancario{
-        width: 250px;
-        margin: 0;
-
-    }
-    .proyectoAs400Jugadores{
-        width: 250px;
-        margin: 0;
-
-    }
-    .proyectoAs400Personas{
+    .proyectoCSWeb {
         width: 250px;
         margin: 0;
 
     }
 
-    .tituloProyecto{
+    .proyectoSpotifree {
+        width: 250px;
+        margin: 0;
+
+    }
+
+    .proyectoSistemaVentas {
+        width: 250px;
+        margin: 0;
+
+    }
+
+    .proyectoSistemaBancario {
+        width: 250px;
+        margin: 0;
+
+    }
+
+    .proyectoAs400Jugadores {
+        width: 250px;
+        margin: 0;
+
+    }
+
+    .proyectoAs400Personas {
+        width: 250px;
+        margin: 0;
+
+    }
+
+    .tituloProyecto {
         font-size: 20px;
     }
 
@@ -1581,63 +1569,86 @@ button:hover {
 
 @media (max-width: 380px) {
 
-    .textoProyectos{
+    .textoProyectos {
         font-size: 12px;
     }
 
-    .textoClicka{
+    .textoClicka {
         font-size: 7px;
     }
 
-    .proyectos{
+    .proyectos {
         width: 75%;
     }
 
-    .proyectosContainer{
+    .proyectosContainer {
         display: flex;
         flex-direction: column;
     }
 
 
-    .proyectoHelpVini{
+    .proyectoHelpVini {
         width: 185px;
         margin: 0;
 
     }
 
-    .proyectoCSWeb{
-        width: 185px;
-        margin: 0;
-
-    }
-    .proyectoSpotifree{
-        width: 185px;
-        margin: 0;
-
-    }
-    .proyectoSistemaVentas{
-        width: 185px;
-        margin: 0;
-
-    }
-    .proyectoSistemaBancario{
-        width: 185px;
-        margin: 0;
-
-    }
-    .proyectoAs400Jugadores{
-        width: 185px;
-        margin: 0;
-
-    }
-    .proyectoAs400Personas{
+    .proyectoCSWeb {
         width: 185px;
         margin: 0;
 
     }
 
-    .tituloProyecto{
+    .proyectoSpotifree {
+        width: 185px;
+        margin: 0;
+
+    }
+
+    .proyectoSistemaVentas {
+        width: 185px;
+        margin: 0;
+
+    }
+
+    .proyectoSistemaBancario {
+        width: 185px;
+        margin: 0;
+
+    }
+
+    .proyectoAs400Jugadores {
+        width: 185px;
+        margin: 0;
+
+    }
+
+    .proyectoAs400Personas {
+        width: 185px;
+        margin: 0;
+
+    }
+
+    .tituloProyecto {
         font-size: 15px;
+    }
+
+}
+
+@media (max-width: 1440px) {
+    .contenido4 {
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+        margin: 0;
+    }
+
+    .videoHoverVini,.videoHoverCSWeb,.videoHoverSpotifree,.videoHoverSistemaBancario,.videoHoverSistemaVentas,video{
+        width: 100%;
+    }
+
+    .descHelpVini,.descCSWeb,.descSpotifree,.descSistemaBancario,.descSistemaVentas{
+        width: 100%;
     }
 
 }
