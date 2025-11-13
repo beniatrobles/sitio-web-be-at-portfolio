@@ -484,6 +484,163 @@ body {
     display: flex;
 }
 
+/* --- 🖥️ Estilo para pantallas grandes (Full HD y 2K) --- */
+@media (min-width: 1920px) {
+  .sobremi {
+    width: 65%;
+    height: 70%;
+    padding: 60px;
+    border-radius: 12px;
+  }
+
+  .textoSobreMi {
+    font-size: 3rem; /* título más grande */
+  }
+
+  .contenido1 {
+    gap: 80px;
+  }
+
+  .cuadroAdvertencia {
+    width: 400px;
+  }
+
+  
+  .imgSobreMi,
+  #imgTerror {
+    width: 400px;
+    height: auto;
+  }
+
+  .textoAdvertencia {
+    font-size: 1.1rem;
+  }
+
+  .presentacion {
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+
+  .resaltar {
+    font-size: 1.6rem;
+  }
+
+  .cv {
+    font-size: 1.1rem;
+    padding: 25px 40px;
+    border-radius: 25px;
+  }
+
+  .contactos {
+    height: auto;
+    gap: 30px;
+  }
+
+  .iconosContactos img {
+    width: 70px;
+  }
+
+  #cerrarSobreMi {
+    font-size: 40px;
+    top: 20px;
+    right: 25px;
+  }
+}
+
+@media (max-width: 1037px) {
+  /* 🔹 El contenedor se adapta al tamaño de pantalla */
+  .sobremi {
+    
+    transform: translate(-50%, -50%);
+    width: 95%;
+    height: 90%;
+    padding: 20px;
+    overflow-y: auto; /* Permite scroll interno si el contenido es largo */
+    box-sizing: border-box;
+  }
+
+  .contenido {
+    width: 100%;
+    height: auto;
+  }
+
+  /* 🔹 El contenido se organiza en 3 filas (imagen - texto - botones) */
+  .contenido1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+    text-align: center;
+  }
+
+  /* 🔹 Imagen centrada y adaptada */
+  .cuadroAdvertencia {
+    width: 100%;
+    align-items: center;
+  }
+
+  .imgSobreMi,
+  #imgTerror {
+    width: 70%;
+    max-width: 350px;
+    height: auto;
+  }
+
+  .textoAdvertencia {
+    font-size: 0.9rem;
+    margin-top: 5px;
+  }
+
+  /* 🔹 Texto centrado y adaptado */
+  .textoycont {
+    width: 90%;
+  }
+
+  .presentacion {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .resaltar {
+    font-size: 1.2rem;
+  }
+
+  /* 🔹 Bloque de contactos debajo */
+  .contactos {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    height: auto;
+    width: 100%;
+  }
+
+  .cv {
+    padding: 15px 30px;
+    font-size: 0.9rem;
+  }
+
+  .iconosContactos {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .iconosContactos img {
+    width: 45px;
+  }
+
+  /* 🔹 Botón cerrar adaptado */
+  #cerrarSobreMi {
+    font-size: 25px;
+    top: 10px;
+    right: 15px;
+  }
+}
+
+
+
 
 
 form {
