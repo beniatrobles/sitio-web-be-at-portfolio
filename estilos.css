@@ -1713,3 +1713,84 @@ button:hover {
         font-size: 0.8rem;
     }
 }
+
+
+
+@media (max-width: 380px) {
+
+    /* --- MODAL --- */
+    .contenidoHover {
+        width: 90%;
+        max-width: 1000px;
+    }
+
+    /* --- CONTENIDO EN COLUMNA --- */
+    .contenido4 {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    /* --- VIDEO MÁXIMO --- */
+    .descripcion {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tituloProyecto {
+        font-size: 0.9rem;
+    }
+
+    .tituloSkills {
+        font-size: 1rem;
+    }
+
+    .videoHoverVini,
+    .videoHoverCSWeb,
+    .videoHoverSpotifree,
+    .videoHoverSistemaBancario,
+    .videoHoverSistemaVentas,
+    video {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* --- IMÁGENES RESPONSIVE --- */
+    .skills {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .skills-grid {
+        width: 100%;
+        /* ocupa todo el modal */
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 1rem;
+        justify-items: center;
+    }
+
+    .skills-grid img {
+        width: 100%;
+        max-width: 80px;
+        height: auto;
+        object-fit: contain;
+    }
+
+    /* --- TEXTOS --- */
+    .descHelpVini,
+    .descCSWeb,
+    .descSpotifree,
+    .descSistemaBancario,
+    .descSistemaVentas {
+        width: 100%;
+        font-size: 0.8rem;
+    }
+}
