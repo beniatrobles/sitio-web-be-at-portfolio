@@ -548,14 +548,12 @@ body {
 }
 
 @media (max-width: 1037px) {
-  /* 🔹 El contenedor se adapta al tamaño de pantalla */
+  
   .sobremi {
-    
-    transform: translate(-50%, -50%);
     width: 95%;
     height: 90%;
     padding: 20px;
-    overflow-y: auto; /* Permite scroll interno si el contenido es largo */
+    overflow-y: auto;
     box-sizing: border-box;
   }
 
@@ -564,7 +562,7 @@ body {
     height: auto;
   }
 
-  /* 🔹 El contenido se organiza en 3 filas (imagen - texto - botones) */
+  
   .contenido1 {
     display: flex;
     flex-direction: column;
@@ -574,7 +572,7 @@ body {
     text-align: center;
   }
 
-  /* 🔹 Imagen centrada y adaptada */
+  
   .cuadroAdvertencia {
     width: 100%;
     align-items: center;
@@ -582,7 +580,7 @@ body {
 
   .imgSobreMi,
   #imgTerror {
-    width: 70%;
+    width: 40%;
     max-width: 350px;
     height: auto;
   }
@@ -592,9 +590,9 @@ body {
     margin-top: 5px;
   }
 
-  /* 🔹 Texto centrado y adaptado */
+  
   .textoycont {
-    width: 90%;
+    width: 80%;
   }
 
   .presentacion {
@@ -606,7 +604,7 @@ body {
     font-size: 1.2rem;
   }
 
-  /* 🔹 Bloque de contactos debajo */
+  
   .contactos {
     flex-direction: column;
     align-items: center;
@@ -631,11 +629,15 @@ body {
     width: 45px;
   }
 
-  /* 🔹 Botón cerrar adaptado */
+ 
   #cerrarSobreMi {
     font-size: 25px;
     top: 10px;
     right: 15px;
+  }
+
+  .realizado{
+    display: none;
   }
 }
 
