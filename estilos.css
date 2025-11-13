@@ -1575,8 +1575,67 @@ button:hover {
     .tituloProyecto{
         font-size: 20px;
     }
-    
+
+}
+
+
+@media (max-width: 380px) {
+
+    .textoProyectos{
+        font-size: 12px;
+    }
+
+    .textoClicka{
+        font-size: 8px;
+    }
 
     
+
+    .proyectosContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .proyectoHelpVini{
+        width: 200px;
+        margin: 0;
+
+    }
+
+    .proyectoCSWeb{
+        width: 200px;
+        margin: 0;
+
+    }
+    .proyectoSpotifree{
+        width: 200px;
+        margin: 0;
+
+    }
+    .proyectoSistemaVentas{
+        width: 200px;
+        margin: 0;
+
+    }
+    .proyectoSistemaBancario{
+        width: 200px;
+        margin: 0;
+
+    }
+    .proyectoAs400Jugadores{
+        width: 200px;
+        margin: 0;
+
+    }
+    .proyectoAs400Personas{
+        width: 200px;
+        margin: 0;
+
+    }
+
+    .tituloProyecto{
+        font-size: 20px;
+    }
 
 }
