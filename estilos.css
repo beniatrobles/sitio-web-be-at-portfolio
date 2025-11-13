@@ -1586,10 +1586,12 @@ button:hover {
     }
 
     .textoClicka{
-        font-size: 8px;
+        font-size: 7px;
     }
 
-    
+    .proyectos{
+        width: 75%;
+    }
 
     .proyectosContainer{
         display: flex;
@@ -1635,7 +1637,7 @@ button:hover {
     }
 
     .tituloProyecto{
-        font-size: 20px;
+        font-size: 15px;
     }
 
 }
