@@ -286,6 +286,7 @@ body {
 }
 
 
+
 .proyectos::-webkit-scrollbar {
     width: 30px;
 }
@@ -763,7 +764,7 @@ body {
 
 @media (max-width: 500px) {
 
-    .contactame{
+    .contactame {
         height: 70%;
     }
 
@@ -772,7 +773,7 @@ body {
         text-align: left;
     }
 
-    #cerrarContactame{
+    #cerrarContactame {
         width: 10px;
     }
 
@@ -942,6 +943,20 @@ button:hover {
     padding: 20px;
     justify-items: center;
 }
+
+@media (max-width: 560px) {
+    .textoProyectos {
+        font-size: 20px;
+        text-align: left;
+    }
+
+    .textoClicka {
+        font-size: 10px;
+        text-align: left;
+    }
+}
+
+
 
 @media (max-width: 1618px) {
     .proyectosContainer {
@@ -1453,4 +1468,51 @@ button:hover {
 .proyectoSistemaBancarioHover.active .descSistemaBancario {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (max-width: 490px) {
+
+    .proyectosContainer{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .proyectoCSWeb{
+        width: 300px;
+        margin: 0;
+
+    }
+    .proyectoSpotifree{
+        width: 300px;
+        margin: 0;
+
+    }
+    .proyectoSistemaVentas{
+        width: 300px;
+        margin: 0;
+
+    }
+    .proyectoSistemaBancario{
+        width: 300px;
+        margin: 0;
+
+    }
+    .proyectoAs400Jugadores{
+        width: 300px;
+        margin: 0;
+
+    }
+    .proyectoAs400Personas{
+        width: 300px;
+        margin: 0;
+
+    }
+    .proyectoHelpVini{
+        width: 300px;
+        margin: 0;
+
+    }
+
+    
+
 }
