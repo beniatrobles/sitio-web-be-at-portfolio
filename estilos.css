@@ -763,6 +763,10 @@ body {
 
 @media (max-width: 500px) {
 
+    .contactame{
+        height: 70%;
+    }
+
     .textoSobreMi {
         font-size: 15px;
         text-align: left;
@@ -779,6 +783,8 @@ body {
     }
 
 }
+
+
 
 form {
     display: flex;
