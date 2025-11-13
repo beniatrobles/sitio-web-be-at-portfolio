@@ -1659,6 +1659,14 @@ button:hover {
         align-items: center;
     }
 
+    .tituloProyecto {
+        font-size: 1.3rem;
+    }
+
+    .tituloSkills {
+        font-size: 1.1rem;
+    }
+
     .videoHoverVini,
     .videoHoverCSWeb,
     .videoHoverSpotifree,
@@ -1680,7 +1688,8 @@ button:hover {
     }
 
     .skills-grid {
-        width: 100%;                       /* ocupa todo el modal */
+        width: 100%;
+        /* ocupa todo el modal */
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
         gap: 1rem;
@@ -1688,10 +1697,10 @@ button:hover {
     }
 
     .skills-grid img {
-        width: 100%;                        
-        max-width: 80px;                    
+        width: 100%;
+        max-width: 80px;
         height: auto;
-        object-fit: contain;                
+        object-fit: contain;
     }
 
     /* --- TEXTOS --- */
@@ -1701,5 +1710,6 @@ button:hover {
     .descSistemaBancario,
     .descSistemaVentas {
         width: 100%;
+        font-size: 0.8rem;
     }
 }
